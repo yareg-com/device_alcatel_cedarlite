@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+** Copyright 2011, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+
+<!-- These resources are around just to allow their values to be customized
+     for different hardware and product builds. -->
+<resources>
+
+	<!-- ENABLE SOFT KEYS -->
+
+    <!-- Whether a software navigation bar should be shown -->
+    <bool name="config_showNavigationBar">true</bool>
+
+	<!-- SCREEN -->
+
+	<!-- If this is true, the screen will come on when you unplug usb/power/whatever -->
+    <bool name="config_unplugTurnsOnScreen">true</bool>
+
+	<!-- BRIGHTNESS -->
+
+	<!-- Minimum screen brightness allowed by the power manager -->
+    <integer name="config_screenBrightnessDim">10</integer>
+
+	<!-- Flag indicating whether we should enable the automatic brightness in Settings -->
+    <bool name="config_automatic_brightness_available">true</bool>
+
+	<!-- Array of light sensor LUX values to define levels for auto backlight brightness support -->		
+    <integer-array name="config_autoBrightnessLevels">
+        <item>6</item>
+		<item>9</item>
+		<item>14</item>
+		<item>20</item>
+		<item>30</item>
+		<item>46</item>
+		<item>68</item>
+        <item>103</item>
+		<item>154</item>
+        <item>231</item>
+		<item>346</item>
+		<item>519</item>
+		<item>778</item>
+		<item>1168</item>
+		<item>1752</item>
+		<item>2627</item>
+		<item>3941</item>
+        <item>5912</item>
+		<item>8867</item>
+    </integer-array>
+
+	<!-- Array of output values for LCD backlight corresponding to the LUX values -->
+    <integer-array name="config_autoBrightnessLcdBacklightValues">
+        <item>19</item>
+		<item>23</item>
+		<item>26</item>
+		<item>30</item>
+		<item>34</item>
+		<item>39</item>
+		<item>45</item>
+        <item>51</item>
+        <item>59</item>
+        <item>67</item>
+        <item>77</item>
+        <item>88</item>
+		<item>101</item>
+		<item>116</item>
+		<item>133</item>
+		<item>152</item>
+		<item>174</item>
+		<item>199</item>
+		<item>228</item>
+        <item>250</item>
+    </integer-array>
+
+	<!-- Array of output values for button backlight corresponding to the LUX values -->
+    <integer-array name="config_autoBrightnessButtonBacklightValues">
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </integer-array>
+
+    <!-- Array of output values for keyboard backlight corresponding to the LUX values -->
+    <integer-array name="config_autoBrightnessKeyboardBacklightValues">
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </integer-array>
+
+	<!-- WIFI -->
+
+	<!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
+    <bool translatable="false" name="config_wifi_dual_band_support">true</bool>
+
+    <!-- Boolean indicating whether the wifi chipset has background scan support -->
+    <bool translatable="false" name="config_wifi_background_scan_support">true</bool>
+
+	<!-- Boolean indicating whether the wifi chipset has p2p support -->
+    <bool translatable="false" name="config_wifi_p2p_support">true</bool>
+
+
+
+
+	<!-- BATTERY -->	
+
+	<!-- Display low battery warning when battery level dips to this value -->
+    <integer name="config_lowBatteryWarningLevel">5</integer>
+
+    <!-- Close low battery warning when battery level reaches this value -->
+    <integer name="config_lowBatteryCloseWarningLevel">10</integer>
+
+	<!-- VIBRATOR -->
+
+	<!-- Vibrator pattern for feedback about touching a virtual key -->
+    <integer-array name="config_virtualKeyVibePattern">
+        <item>10</item>
+    </integer-array>
+	
+
+</resources>

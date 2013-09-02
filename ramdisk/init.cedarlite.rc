@@ -1,0 +1,548 @@
+import init.cedarlite.usb.rc
+
+
+on early-init
+
+	mount debugfs debugfs /sys/kernel/debug
+
+
+on init
+
+	# STORAGE
+	# mkdir /storage 0050 system sdcard_r
+	mkdir /mnt/sdcard 0000 system system
+	mkdir /mnt/emmc 0000 system system
+
+	export EXTERNAL_STORAGE /mnt/sdcard
+	# export PHONE_STORAGE /mnt/emmc
+
+	#symlink /storage/sdcard /sdcard
+	symlink /mnt/sdcard /sdcard
+
+	mkdir /factory 0775 radio radio
+	# mkdir /custom
+
+
+on fs	
+
+	# MOUNT FILESYSTEM
+	mount ext4 /dev/block/platform/omap/omap_hsmmc.1/by-name/system /system wait ro
+	mount ext4 /dev/block/platform/omap/omap_hsmmc.1/by-name/userdata /data wait noatime nosuid nodev nomblk_io_submit errors=panic data=writeback commit=15 barrier=0 noauto_da_alloc discard
+	mount ext4 /dev/block/platform/omap/omap_hsmmc.1/by-name/cache /cache wait noatime nosuid nodev nomblk_io_submit errors=panic
+	mount ext4 /dev/block/platform/omap/omap_hsmmc.1/by-name/efs /factory wait ro
+
+	# FOR FUTURE HACKS
+	# mount ext4 /dev/block/platform/omap/omap_hsmmc.1/by-name/custom /custom wait ro
+	
+	# CRYPTO
+	setprop ro.crypto.keyfile.userdata /dev/block/platform/omap/omap_hsmmc.1/by-name/crypto
+	setprop ro.crypto.tmpfs_options size=128m,mode=0771,uid=1000,gid=1000
+	setprop ro.crypto.fuse_sdcard true
+
+
+on post-fs-data
+    
+	mkdir /data/media 0775 media_rw media_rw
+	# chown media_rw media_rw /data/media
+
+	# WIFI	
+	#mkdir /data/misc/wifi 0770 wifi wifi
+	mkdir /data/misc/wifi/sockets 0770 wifi wifi
+	mkdir /data/misc/dhcp 0770 dhcp dhcp
+	
+	#chown wifi wifi /data/misc/wifi/p2p_supplicant.conf
+	chmod 0660 /data/misc/wifi/p2p_supplicant.conf
+
+	mkdir /data/smc 0770 drmrpc drmrpc
+	chown drmrpc drmrpc /data/smc/counter.bin
+	chown drmrpc drmrpc /data/smc/storage.bin
+	chown drmrpc drmrpc /data/smc/system.bin
+
+	setprop vold.post_fs_data_done 1
+
+
+on boot
+
+	# MAX FREQ IS 1.2 GHZ, MIN FREQ IS 350 MHZ	
+	write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1200000
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 350000	
+
+	# BOOST THE CPU FOR 30 SEC FOR FASTER BOOT
+	write /sys/devices/system/cpu/cpufreq/interactive/boost_timeout 30000000
+	write /sys/devices/system/cpu/cpu0/cpufreq/boost_cpufreq 1
+
+	# ???
+    chown system system /sys/block/mmcblk0/queue/scheduler
+    chmod 0664 /sys/block/mmcblk0/queue/scheduler
+
+	# CMDLINE
+	chmod 666 /proc/cmdline
+
+	# POWERVR	
+	chmod 0666 /dev/pvrsrvkm
+
+	# TILER
+    chmod 0777 /dev/tiler
+    chmod 0777 /dev/dsscomp
+
+	# ION
+	chmod 0777 /dev/ion
+
+	# FM
+	chmod 0777 /dev/fm34
+	chown system system /dev/radio0
+	chmod 0666 /dev/radio0
+
+	# LIGHT SENSOR
+	chown system system /dev/taos
+	chmod 0660 /dev/taos
+
+	# KEYPAD
+	chmod 0444 /system/usr/keychars/omap4-keypad.kcm.bin
+
+	# XMM6260 RIL
+	chmod 0660 /dev/xmd-tty0
+	# chmod 0660 /dev/xmd-tty1
+	# chmod 0660 /dev/xmd-tty2
+	# chmod 0660 /dev/xmd-tty3
+	# chmod 0660 /dev/xmd-tty4
+	# chmod 0660 /dev/xmd-tty5
+	# chmod 0660 /dev/xmd-tty6
+	# chmod 0660 /dev/xmd-tty7
+	# chmod 0660 /dev/xmd-tty8
+	# chmod 0660 /dev/xmd-tty9
+	# chmod 0660 /dev/xmd-tty10
+	# chmod 0660 /dev/xmd-tty11
+
+	chown radio radio /dev/xmd-tty0
+	# chown radio radio /dev/xmd-tty1
+	# chown radio radio /dev/xmd-tty2
+	# chown radio radio /dev/xmd-tty3
+	# chown radio radio /dev/xmd-tty4
+	# chown system system /dev/xmd-tty5
+	# chown system system /dev/xmd-tty6
+	# chown radio radio /dev/xmd-tty7
+	# chown radio radio /dev/xmd-tty8
+	# chown media media /dev/xmd-tty8
+	# chown radio radio /dev/xmd-tty9
+	# chown radio radio /dev/xmd-tty10
+	# chown radio radio /dev/xmd-tty11
+
+	# FRAMEBUFFERS
+	chown system system /sys/class/graphics/fb0/overlays
+    chown system system /sys/class/graphics/fb1/overlays
+
+	# OMAPDSS DISPLAYS
+    chown system system /sys/devices/platform/omapdss/display0/enabled
+    chown system system /sys/devices/platform/omapdss/display1/enabled
+
+    chown system system /sys/devices/platform/omapdss/display0/name
+    chown system system /sys/devices/platform/omapdss/display1/name
+
+	chown system system /sys/devices/platform/omapdss/display0/timings
+    chown system system /sys/devices/platform/omapdss/display1/timings
+
+	chown system system /sys/devices/platform/omapdss/display1/s3d_enable
+	chown system system /sys/devices/platform/omapdss/display1/s3d_type
+
+	# OMAPDSS OVERLAYS
+	chown system system /sys/devices/platform/omapdss/overlay0/enabled
+    chown system system /sys/devices/platform/omapdss/overlay1/enabled
+    chown system system /sys/devices/platform/omapdss/overlay2/enabled
+    chown system system /sys/devices/platform/omapdss/overlay3/enabled
+
+    chown system system /sys/devices/platform/omapdss/overlay0/manager
+    chown system system /sys/devices/platform/omapdss/overlay1/manager
+    chown system system /sys/devices/platform/omapdss/overlay2/manager
+    chown system system /sys/devices/platform/omapdss/overlay3/manager
+
+    chown system system /sys/devices/platform/omapdss/overlay0/zorder
+    chown system system /sys/devices/platform/omapdss/overlay1/zorder
+    chown system system /sys/devices/platform/omapdss/overlay2/zorder
+    chown system system /sys/devices/platform/omapdss/overlay3/zorder
+
+	# OMAPDSS MANAGERS
+    chown system system /sys/devices/platform/omapdss/manager0/name
+	chown system system /sys/devices/platform/omapdss/manager1/name
+    chown system system /sys/devices/platform/omapdss/manager2/name
+
+    chown system system /sys/devices/platform/omapdss/manager0/display
+	chown system system /sys/devices/platform/omapdss/manager1/display
+    chown system system /sys/devices/platform/omapdss/manager2/display	
+
+	# CAMERA
+	chown media media /data/misc/camera
+	# chown media media /data/misc/camera/R12_MVEN001_LD1_ND0_IR0_SH0_FL0_SVEN001_DCCID43
+	# chown media media /data/misc/camera/R12_MVEN002_LD2_ND0_IR0_SH0_FL0_SVEN002_DCCID42
+	# chown media media /data/misc/camera/R8_MVEN002_LD2_ND0_IR0_SH0_FL1_SVEN003_DCCID1042
+	# chown media media /system/vendor/misc/camera
+	chown media media /system/vendor/misc/camera/R2_MVEN000_LD0_ND0_IR0_SH0_FL0_SVEN000_DCCID1043
+	# chown media media /system/vendor/misc/camera/R5_MVEN002_LD0_ND0_IR0_SH0_FL0_SVEN002_DCCID1051
+	
+	# HDCP KEYS
+	symlink /system/vendor/firmware/hdcp.keys /factory/hdcp.keys
+
+	# LCD BRIGHTNESS
+	chown system system /sys/class/backlight/lcd-backlight/brightness
+	chmod 0660 /sys/class/backlight/lcd-backlight/brightness
+
+	# SENSORS
+	chown system system /sys/devices/platform/omap/pcb_temp_sensor.0/temp1_input
+	chmod 0660 /sys/devices/platform/omap/pcb_temp_sensor.0/temp1_input    
+
+	# CAMERA FLASH LED
+	chown system system /sys/sgm3140_flash_led/flash_led
+	chmod 0660 /sys/sgm3140_flash_led/flash_led
+
+	chown system system /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-000c/sensor_data
+	chmod 0660 /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-000c/sensor_data
+
+	chown system system /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/bandwidth
+	chmod 0660 /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/bandwidth
+	chown system system /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/delay
+	chmod 0660 /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/delay
+	chown system system /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/enable
+	chmod 0660 /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/enable
+	chown system system /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/enable_int
+	chmod 0660 /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/enable_int
+	chown system system /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/fast_calibration_x
+	chmod 0660 /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/fast_calibration_x
+	chown system system /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/fast_calibration_y
+	chmod 0660 /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/fast_calibration_y
+	chown system system /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/fast_calibration_z
+	chmod 0660 /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/fast_calibration_z
+	chown system system /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/flat_hold_time
+	chmod 0660 /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/flat_hold_time
+	chown system system /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/flat_theta
+	chmod 0660 /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/flat_theta
+	chown system system /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/high_g_duration
+	chmod 0660 /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/high_g_duration
+	chown system system /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/high_g_threshold
+	chmod 0660 /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/high_g_threshold
+	chown system system /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/int_mode
+	chmod 0660 /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/int_mode
+	chown system system /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/low_g_duration
+	chmod 0660 /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/low_g_duration
+	chown system system /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/low_g_threshold
+	chmod 0660 /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/low_g_threshold
+	chown system system /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/mode
+	chmod 0660 /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/mode
+	chown system system /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/orient_blocking
+	chmod 0660 /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/orient_blocking
+	chown system system /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/orient_hyst
+	chmod 0660 /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/orient_hyst
+	chown system system /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/orient_mode
+	chmod 0660 /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/orient_mode
+	chown system system /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/orient_theta
+	chmod 0660 /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/orient_theta
+	chown system system /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/range
+	chmod 0660 /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/range
+	chown system system /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/reg
+	chmod 0660 /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/reg
+	chown system system /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/selftest
+	chmod 0660 /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/selftest
+	chown system system /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/slope_duration
+	chmod 0660 /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/slope_duration
+	chown system system /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/slope_threshold
+	chmod 0660 /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/slope_threshold
+	chown system system /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/tap_duration
+	chmod 0660 /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/tap_duration
+	chown system system /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/tap_quiet
+	chmod 0660 /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/tap_quiet
+	chown system system /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/tap_samp
+	chmod 0660 /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/tap_samp
+	chown system system /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/tap_shock
+	chmod 0660 /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/tap_shock
+	chown system system /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/tap_threshold
+	chmod 0660 /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0008/tap_threshold
+
+	chown system system /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0039/reg
+	chmod 0660 /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0039/reg
+
+	chown system system /sys/devices/platform/omap/omap_i2c.4/i2c-4/4-0060/fm34/fm34
+	chmod 0660 /sys/devices/platform/omap/omap_i2c.4/i2c-4/4-0060/fm34/fm34
+	chown system system /sys/devices/platform/omap/omap_i2c.4/i2c-4/4-0060/fm34/fm34_bypass
+	chmod 0660 /sys/devices/platform/omap/omap_i2c.4/i2c-4/4-0060/fm34/fm34_bypass    
+
+	# COMPASS (akm8975)
+	chown system system /dev/akm8975_aot
+	chmod 0660 /dev/akm8975_aot
+	chown system system /dev/akm8975_dev
+	chmod 0660 /dev/akm8975_dev
+
+	# BLUETOOTH
+	chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
+	chown bluetooth bluetooth /dev/ttyO1
+	chmod 0660 /sys/class/rfkill/rfkill0/state
+	chmod 0600 /dev/ttyO1
+
+	# H264 Encoder Profile setting
+	# 1 - Base Profile
+	# 2 - Main Profile
+	# 8 - High Profile
+	setprop video.h264enc.profile 1
+
+	write /sys/bus/usb/devices/usb1/power/autosuspend_delay_ms 0
+	write /sys/bus/usb/devices/usb2/power/autosuspend_delay_ms 0	
+	
+	# LOADING MODULES
+	insmod /system/lib/modules/compat.ko
+	insmod /system/lib/modules/cfg80211.ko
+	insmod /system/lib/modules/mac80211.ko
+	insmod /system/lib/modules/wl12xx.ko debug_level=0x63c00
+	# insmod /system/lib/modules/wl12xx.ko debug_level=0x00
+	insmod /system/lib/modules/gps_drv.ko
+
+
+service pvrsrvinit /vendor/bin/pvrsrvinit
+	class core
+	user root
+	group root
+	oneshot
+
+
+# create filesystems if necessary
+service setup_fs /system/bin/setup_fs \
+	/dev/block/platform/omap/omap_hsmmc.1/by-name/cache \
+	/dev/block/platform/omap/omap_hsmmc.1/by-name/userdata
+	class core
+	user root
+	group root
+	oneshot
+
+
+service compassd /system/bin/akmd8975
+	class main
+	socket compassd stream 660 system system
+
+
+# BLUETOOTH/FM/GPS ---------------------------------------------------------------------------------
+service uim /system/bin/uim-sysfs
+	class core
+	user bluetooth
+	group bluetooth net_bt_admin
+
+
+#service hciattach /system/bin/hciattach -l
+#	user root
+#	group bluetooth net_bt_admin misc
+#	disabled
+#	oneshot
+
+
+service hciattach /system/bin/hciattach -l
+	class main
+	user bluetooth
+	group bluetooth net_bt_admin
+	disabled
+	oneshot
+
+
+# MSHIELD SMC DAEMON -------------------------------------------------------------------------------
+#service tf_daemon /system/bin/tf_daemon \
+#	-d -c /vendor/etc/smc_normal_world_android_cfg.ini
+#	class main
+#	user root
+#	group root
+
+
+# MSHIELD SMC PA CONTROL ---------------------------------------------------------------------------
+#service smc_pa /system/bin/smc_pa_ctrl \
+#	-c /vendor/etc/smc_normal_world_android_cfg.ini \
+#	start /vendor/firmware/smc_pa.ift
+#	class core
+#	user root
+#	group root
+#	oneshot
+
+
+# DISABLE BUGREPORT --------------------------------------------------------------------------------
+#service bugreport /system/bin/bugmailer.sh -v
+#	class main
+#	disabled
+#	oneshot
+#	keycodes 16 25
+
+
+# VIRTUAL SD CARD ----------------------------------------------------------------------------------
+service sdcard /system/bin/sdcard /data/media 1023 1023
+	class late_start
+
+
+# WIFI ---------------------------------------------------------------------------------------------
+service p2p_supplicant /system/bin/wpa_supplicant \
+	-iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf -N \
+	-ip2p0 -Dnl80211 -c/data/misc/wifi/p2p_supplicant.conf -puse_p2p_group_interface=1
+	class main
+	socket wpa_wlan0 dgram 660 wifi wifi
+	disabled
+	oneshot
+
+
+service wpa_supplicant /system/bin/wpa_supplicant \
+	-iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf -e/data/misc/wifi/entropy.bin
+	class main
+	socket wpa_wlan0 dgram 660 wifi wifi
+	disabled
+	oneshot
+
+
+# DHCP ---------------------------------------------------------------------------------------------
+service dhcpcd_wlan0 /system/bin/dhcpcd -ABKL
+	class main
+	disabled
+	oneshot
+
+
+service iprenew_wlan0 /system/bin/dhcpcd -n
+	class main
+	disabled
+	oneshot
+
+
+service dhcpcd_p2p /system/bin/dhcpcd -aABKL
+	class main
+	disabled
+	oneshot
+
+
+service iprenew_p2p /system/bin/dhcpcd -n
+	class main
+	disabled
+	oneshot
+
+
+service dhcpcd_eth0 /system/bin/dhcpcd -ABKL
+	class main
+	disabled
+	oneshot
+
+
+service dhcpcd_bnep0 /system/bin/dhcpcd -ABKL
+	class main
+	disabled
+	oneshot
+
+
+service iprenew_bnep0 /system/bin/dhcpcd -n
+	class main
+	disabled
+	oneshot
+
+
+# HOSTAPD ------------------------------------------------------------------------------------------
+service hostapd_bin /system/bin/hostapd -d /data/misc/wifi/hostapd.conf
+	socket wpa_wlan0 dgram 660 wifi wifi
+	class main
+	disabled
+	oneshot
+
+
+# ON PROPERTY --------------------------------------------------------------------------------------
+#on property:init.svc.smc_pa=stopped
+#	start tf_daemon
+
+
+on property:wlan.driver.status=ok
+	chown wifi wifi /sys/devices/platform/wl1271/bt_coex_state
+
+
+# SAFE REBOOT --------------------------------------------------------------------------------------
+on property:sys.reboot=1
+#	stop ssmgrd
+	exec /system/bin/sleep 10
+	exec /system/bin/reboot
+
+
+# SAFE SHUTDOWN ------------------------------------------------------------------------------------
+on property:sys.shutdown=1
+#	stop ssmgrd
+	exec /system/bin/sleep 10
+	exec /system/bin/reboot -p
+
+
+# THE REST FUCKING STUFF IS DISABLED ---------------------------------------------------------------
+
+#houyan.qin add for update 3g
+#service download_bridge /system/bin/download_bridge.sh
+#    disabled
+#    oneshot
+
+
+#service entranceofbttest /system/bin/sh /system/etc/entranceofbttest.sh
+#       disabled
+#       oneshot
+# Wi-Fi calibration service added by Min
+#service wifical /system/bin/sh /system/bin/wifical.sh
+#       disabled
+#       oneshot
+
+#service navl_server /system/bin/navd --android_log NAVD  -p3 -nav\"-c/system/etc/gps/config/pathconfigfile.txt\"
+#	class main
+#	disabled
+#	oneshot
+
+
+# Wi-Fi RF tx certification service added by Min
+#service wifi_rfcert_init /system/bin/sh /system/etc/wifi_rf/init.sh
+#       disabled
+#       oneshot
+
+#service wifi_rfcert_uni /system/bin/sh /system/etc/wifi_rf/uninit.sh
+#       disabled
+#       oneshot
+
+#service wifi_rfcert_run /system/bin/sh /data/misc/wifi/run.sh
+#       disabled
+#       oneshot
+
+#service wifi_rfcert_stop /system/bin/sh /system/etc/wifi_rf/stop.sh
+#       disabled
+#       oneshot
+#write log to sdcard
+#service write_log /system/bin/logcat --sdcard &
+#    disabled
+#    oneshot
+
+# Wi-Fi netlink settings service added by Min
+#service wifi_nlps_on /system/bin/sh /system/etc/wifi_nl/ps_on.sh
+#       disabled
+#       oneshot
+
+#service wifi_nlps_off /system/bin/sh /system/etc/wifi_nl/ps_off.sh
+#       disabled
+#       oneshot
+
+#service wifi_nlroam_on /system/bin/sh /system/etc/wifi_nl/roam_on.sh
+#       disabled
+#       oneshot
+
+#service wifi_nlroam_off /system/bin/sh /system/etc/wifi_nl/roam_off.sh
+#       disabled
+#       oneshot
+
+#service down_daemon /system/bin/kill-modem
+#    class main 
+#    user root   
+#    oneshot
+#    disabled
+#service modem_ctr_daemon /system/bin/modemCtld
+#    class main
+#    socket modemctld stream 660 root radio
+
+# Wi-Fi RF RX analyze service added by Min
+#service wifi_rx_init /system/bin/sh /system/etc/wifi_rx/init.sh
+#       disabled
+#       oneshot
+
+#service wifi_rx_uni /system/bin/sh /system/etc/wifi_rx/uninit.sh
+#       disabled
+#       oneshot
+
+#service wifi_rx_run /system/bin/sh /data/misc/wifi/run.sh
+#       disabled
+#       oneshot
+
+#service wifi_rx_stop /system/bin/sh /system/etc/wifi_rx/stop.sh
+#       disabled
+#       oneshot

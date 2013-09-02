@@ -1,0 +1,30 @@
+# LSD DENSITY
+ro.sf.lcd_density=320
+
+# RIL
+rild.libpath=/system/lib/libXMM6260-ril.so
+rild.libargs=-d /dev/xmd-tty0
+
+# WIFI
+wifi.interface=wlan0
+
+# OMAP ENHANCEMENT
+com.ti.omap_enhancement=true
+
+# PHONE
+ro.phone.modem=s_900
+ro.s_900.main.mic.volume=106
+ro.s_900.earpiece.voice.vol.le5=122
+ro.s_900.earpiece.voice.vol.le4=118
+ro.s_900.earpiece.voice.vol.le3=104
+ro.s_900.earpiece.voice.vol.le2=110
+ro.s_900.earpiece.voice.vol.le1=98
+ro.s_900.earpiece.voice.vol.le0=97
+
+ro.c_986.main.mic.volume=118
+ro.c_986.earpiece.voice.vol.le5=127
+ro.c_986.earpiece.voice.vol.le4=124
+ro.c_986.earpiece.voice.vol.le3=118
+ro.c_986.earpiece.voice.vol.le2=116
+ro.c_986.earpiece.voice.vol.le1=100
+ro.c_986.earpiece.voice.vol.le0=99
