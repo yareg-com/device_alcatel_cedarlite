@@ -293,7 +293,7 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 # FRAMEWORK ----------------------------------------------------------------------------------------
 
-$(call inherit-product, frameworks/base/build/phone-xhdpi-1024-dalvik-heap.mk)
+#$(call inherit-product, frameworks/base/build/phone-xhdpi-1024-dalvik-heap.mk)
 
 
 # OMAP4 HARDWARE -----------------------------------------------------------------------------------
@@ -308,5 +308,22 @@ $(call inherit-product, hardware/ti/omap4xxx/omap4.mk)
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+
+# REMOVE PACKAGES
+PRODUCT_PACKAGES -= \
+	HoloSpiralWallpaper \
+	MagicSmokeWallpapers \
+	NoiseField \
+	Galaxy4 \
+	CMWallpapers \
+	LiveWallpapers \
+	LiveWallpapersPicker \
+	VisualizationWallpapers \
+	PhaseBeam \
+	VoiceDialer \
+	SpareParts
+	
+PRODUCT_COPY_FILES -=  \
+    vendor/cm/proprietary/RomManager.apk:system/app/RomManager.apk
 
 
