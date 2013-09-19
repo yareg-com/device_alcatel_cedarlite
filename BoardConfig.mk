@@ -97,7 +97,7 @@ USE_OPENGL_RENDERER := true
 
 
 # LIGHTS -------------------------------------------------------------------------------------------
-#TARGET_PROVIDES_LIBLIGHTS := true
+TARGET_PROVIDES_LIBLIGHTS := true
 
 
 # POWERHAL -----------------------------------------------------------------------------------------
@@ -145,6 +145,8 @@ BOARD_GPS_LIBRARIES          := libgps
 # AUDIO --------------------------------------------------------------------------------------------
 BOARD_USES_GENERIC_AUDIO := false
 #BUILD_WITH_ALSA_UTILS := false
+TARGET_PROVIDES_LIBAUDIO := true
+COMMON_GLOBAL_CFLAGS += -DICS_AUDIO_BLOB
 
 
 # CAMERA -------------------------------------------------------------------------------------------
