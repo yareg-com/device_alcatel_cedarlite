@@ -11,7 +11,7 @@ on init
 	# STORAGE
 	# mkdir /storage 0050 system sdcard_r
 	mkdir /mnt/sdcard 0000 system system
-	mkdir /mnt/emmc 0000 system system
+	# mkdir /mnt/emmc 0000 system system
 
 	export EXTERNAL_STORAGE /mnt/sdcard
 	# export PHONE_STORAGE /mnt/emmc
@@ -23,7 +23,7 @@ on init
 	# mkdir /custom
 
 
-on fs	
+on fs
 
 	# MOUNT FILESYSTEM
 	mount ext4 /dev/block/platform/omap/omap_hsmmc.1/by-name/system /system wait ro
@@ -42,7 +42,7 @@ on fs
 
 on post-fs-data
     
-	mkdir /data/media 0775 media_rw media_rw
+	# mkdir /data/media 0775 media_rw media_rw
 	# chown media_rw media_rw /data/media
 
 	# WIFI	
@@ -365,8 +365,8 @@ service hciattach /system/bin/hciattach -l
 
 
 # VIRTUAL SD CARD ----------------------------------------------------------------------------------
-service sdcard /system/bin/sdcard /data/media 1023 1023
-	class late_start
+#service sdcard /system/bin/sdcard /data/media 1023 1023
+#	class late_start
 
 
 # WIFI ---------------------------------------------------------------------------------------------

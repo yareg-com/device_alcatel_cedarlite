@@ -1,5 +1,5 @@
 # INTERNAL STORAGE
-dev_mount emmc /storage/emmc 18 /devices/platform/omap/omap_hsmmc.1/mmc_host/mmc0 nonremovable
+#dev_mount emmc /storage/emmc 18 /devices/platform/omap/omap_hsmmc.1/mmc_host/mmc0 nonremovable
 
 # EXTERNAL MICROSD STORAGE
 dev_mount microsd /mnt/sdcard auto /devices/platform/omap/omap_hsmmc.0/mmc_host/mmc1
