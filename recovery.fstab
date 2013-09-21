@@ -1,7 +1,6 @@
-# mount point fstype device
+# mount point   fstype  device
 
-/sdcard         vfat    /dev/block/mmcblk1p1
-
+/sdcard         vfat    /dev/block/mmcblk1p1  /dev/block/mmcblk1
 /xloader        emmc    /dev/block/platform/omap/omap_hsmmc.1/by-name/xloader
 /bootloader     emmc    /dev/block/platform/omap/omap_hsmmc.1/by-name/bootloader
 /kernel         emmc    /dev/block/platform/omap/omap_hsmmc.1/by-name/kernel
