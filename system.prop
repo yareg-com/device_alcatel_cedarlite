@@ -71,4 +71,4 @@ ro.c_986.earpiece.voice.vol.le2=116
 ro.c_986.earpiece.voice.vol.le1=100
 ro.c_986.earpiece.voice.vol.le0=99
 
-ro.kernel.android.checkjni = 0
+ro.kernel.android.checkjni=0
