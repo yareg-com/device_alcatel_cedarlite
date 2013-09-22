@@ -152,6 +152,7 @@ COMMON_GLOBAL_CFLAGS += -DICS_AUDIO_BLOB
 # CAMERA -------------------------------------------------------------------------------------------
 USE_CAMERA_STUB          := false
 BOARD_USES_TI_CAMERA_HAL := true
+COMMON_GLOBAL_CFLAGS     += -DDISABLE_HW_ID_MATCH_CHECK
 
 
 # FM RADIO -----------------------------------------------------------------------------------------
