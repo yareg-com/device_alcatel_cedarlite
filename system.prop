@@ -8,6 +8,7 @@ rild.libargs=-d /dev/xmd-tty0
 mobiledata.interfaces=rmnet0,wlan0
 
 ro.ril.enable.dtm=1
+ro.ril.enable.amr.wideband=1
 ro.ril.gprsclass=34
 ro.ril.hsdpa.category=14
 ro.ril.hsupa.category=6
@@ -17,6 +18,7 @@ ro.ril.disable.power.collapse=1
 
 ro.telephony.default_network=0
 ro.telephony.call_ring.multiple=0
+ro.telephony.call_ring.delay=0
 
 # WIFI
 wifi.interface=wlan0
@@ -36,13 +38,30 @@ ro.config.hw_globalEcc=true
 ro.config.hw_support_ipcall=true
 ro.config.hw_GSensorOptimize=true
 ro.config.hw_temperature_warn=true
-ro.config.hwfeature_wakeupkey=0
+ro.config.hwfeature_wakeupkey=1
+
+# ONLY TWO FINGERS TOUCH
+ro.product.multi_touch_enabled=true
+ro.product.max_num_touch=2
 
 persyst.sys.main_storage=external_sd
 
+# DISABLE LOGS
 profiler.force_disable_err_rpt=1
 profiler.force_disable_ulog=1
+logcat.live=disable
 
+# DISABLE STRICT MODE CHECKING
+persist.android.strictmode=0
+
+# DISABLE SENDING OF USAGE DATA
+ro.config.nocheckin=1
+
+# DISABLE ERROR CHECKING
+ro.kernel.android.checkjni=0
+ro.kernel.checkjni=0
+
+# BETTER SCROLLING
 ro.max.fling_velocity=12000
 ro.min.fling_velocity=8000
 
@@ -53,6 +72,14 @@ ro.device.gpu=PowerVR SGX SGX540
 ro.device.rear_cam=5 MP
 ro.device.front_cam=1.3 MP
 ro.device.screen_res=720x1280
+
+# HW & VIDEO ACCELERATION
+debug.sf.hw=1
+debug.performance.tuning=1
+debug.composition.type=gpu
+debug.egl.profiler=1
+debug.egl.hw=1
+video.accelerate.hw=1
 
 # PHONE
 ro.phone.modem=c_986
@@ -71,5 +98,3 @@ ro.c_986.earpiece.voice.vol.le3=118
 ro.c_986.earpiece.voice.vol.le2=116
 ro.c_986.earpiece.voice.vol.le1=100
 ro.c_986.earpiece.voice.vol.le0=99
-
-ro.kernel.android.checkjni=0
