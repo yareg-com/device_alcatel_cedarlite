@@ -312,7 +312,7 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 $(call inherit-product, hardware/ti/omap4xxx/omap4.mk)
 #$(call inherit-product, device/alcatel/cedarlite/graphics/sgx-imgtec-bins.mk)
-#$(call inherit-product-if-exists, hardware/ti/wpan/ti-wpan-products.mk)
+$(call inherit-product-if-exists, hardware/ti/wpan/ti-wpan-products.mk)
 #$(call inherit-product-if-exists, device/ti/proprietary-open/wl12xx/wlan/wl12xx-wlan-fw-products.mk)
 
 
