@@ -25,7 +25,7 @@ wifi.interface=wlan0
 com.ti.omap_enhancement=true
 com.ti.omap_enhancement_s3d=true
 
-# HW
+# HARDWARE OPTIONS
 ro.config.hw_battery_percent=true
 ro.config.hw_uninstall_dataapp=true
 ro.config.hw_fast_dormancy=1
@@ -36,6 +36,7 @@ ro.config.hw_globalEcc=true
 ro.config.hw_support_ipcall=true
 ro.config.hw_GSensorOptimize=true
 ro.config.hw_temperature_warn=true
+ro.config.hwfeature_wakeupkey=0
 
 persyst.sys.main_storage=external_sd
 
