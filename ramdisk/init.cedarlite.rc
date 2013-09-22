@@ -20,7 +20,10 @@ on init
     symlink /mnt/sdcard /sdcard
 
     mkdir /factory 0775 radio radio
-    # mkdir /custom
+    
+    # CUSTOM STORAGE
+    mkdir /mnt/custom_storage0
+    mkdir /mnt/custom_storage1
 
 
 on fs
@@ -31,8 +34,9 @@ on fs
     mount ext4 /dev/block/platform/omap/omap_hsmmc.1/by-name/cache /cache wait noatime nosuid nodev nomblk_io_submit errors=panic data=writeback commit=15 barrier=0 noauto_da_alloc discard
     mount ext4 /dev/block/platform/omap/omap_hsmmc.1/by-name/efs /factory wait ro
 
-    # FOR FUTURE HACKS
-    # mount ext4 /dev/block/platform/omap/omap_hsmmc.1/by-name/custom /custom wait ro
+    # CUSTOM STORAGE
+    mount ext4 /dev/block/platform/omap/omap_hsmmc.1/by-name/custom /mnt/custom_storage0 wait noatime nosuid nodev nomblk_io_submit errors=panic data=writeback commit=15 barrier=0 noauto_da_alloc discard
+    mount ext4 /dev/block/platform/omap/omap_hsmmc.1/by-name/cdrom /mnt/custom_storage1 wait noatime nosuid nodev nomblk_io_submit errors=panic data=writeback commit=15 barrier=0 noauto_da_alloc discard
 
     # CRYPTO
     setprop ro.crypto.keyfile.userdata /dev/block/platform/omap/omap_hsmmc.1/by-name/crypto
