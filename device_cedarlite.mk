@@ -147,9 +147,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/lights/lights.omap4.so:system/lib/hw/lights.omap4.so
 
 
-# LIGHTS -------------------------------------------------------------------------------------------
+# SENSORS ------------------------------------------------------------------------------------------
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/sensors/sensors.omap4.so:system/lib/hw/sensors.omap4.so
+    $(LOCAL_PATH)/prebuilt/sensors/sensors.omap4.so:system/lib/hw/sensors.omap4.so \
+    $(LOCAL_PATH)/prebuilt/compass/akmd8975:system/bin/akmd8975
 
 
 # KERNEL MODULES -----------------------------------------------------------------------------------
