@@ -22,8 +22,7 @@ on init
     mkdir /factory 0775 radio radio
     
     # CUSTOM STORAGE
-    mkdir /mnt/custom_storage0
-    mkdir /mnt/custom_storage1
+    mkdir /mnt/custom_storage
 
 
 on fs
@@ -35,8 +34,7 @@ on fs
     mount ext4 /dev/block/platform/omap/omap_hsmmc.1/by-name/efs /factory wait ro
 
     # CUSTOM STORAGE
-    mount ext4 /dev/block/platform/omap/omap_hsmmc.1/by-name/custom /mnt/custom_storage0 wait noatime nosuid nodev nomblk_io_submit errors=panic data=writeback commit=15 barrier=0 noauto_da_alloc discard
-    mount ext4 /dev/block/platform/omap/omap_hsmmc.1/by-name/cdrom /mnt/custom_storage1 wait noatime nosuid nodev nomblk_io_submit errors=panic data=writeback commit=15 barrier=0 noauto_da_alloc discard
+    mount ext4 /dev/block/platform/omap/omap_hsmmc.1/by-name/custom /mnt/custom_storage wait noatime nosuid nodev nomblk_io_submit errors=panic data=writeback commit=15 barrier=0 noauto_da_alloc discard
 
     # CRYPTO
     setprop ro.crypto.keyfile.userdata /dev/block/platform/omap/omap_hsmmc.1/by-name/crypto
@@ -179,7 +177,7 @@ on boot
     # chown media media /data/misc/camera/R12_MVEN001_LD1_ND0_IR0_SH0_FL0_SVEN001_DCCID43
     # chown media media /data/misc/camera/R12_MVEN002_LD2_ND0_IR0_SH0_FL0_SVEN002_DCCID42
     # chown media media /data/misc/camera/R8_MVEN002_LD2_ND0_IR0_SH0_FL1_SVEN003_DCCID1042
-    # chown media media /system/vendor/misc/camera
+    chown media media /system/vendor/misc/camera
     chown media media /system/vendor/misc/camera/R2_MVEN000_LD0_ND0_IR0_SH0_FL0_SVEN000_DCCID1043
     # chown media media /system/vendor/misc/camera/R5_MVEN002_LD0_ND0_IR0_SH0_FL0_SVEN002_DCCID1051
 
