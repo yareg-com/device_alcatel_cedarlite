@@ -246,8 +246,7 @@ PRODUCT_PACKAGES += \
 # PREBUILT APPS ------------------------------------------------------------------------------------
 
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/prebuilt/apps/FileManager.apk:system/app/FileManager.apk \
-	$(LOCAL_PATH)/prebuilt/apps/Firefox.apk:system/app/Firefox.apk
+	$(LOCAL_PATH)/prebuilt/apps/FileManager.apk:system/app/FileManager.apk
 
 
 # TORCH --------------------------------------------------------------------------------------------
