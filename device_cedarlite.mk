@@ -115,11 +115,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/gpu/gralloc.omap4.so:system/vendor/lib/hw/gralloc.omap4.so \
     $(LOCAL_PATH)/prebuilt/gpu/hwcomposer.omap4.so:system/vendor/lib/hw/hwcomposer.omap4.so
 
-# DUCATI -------------------------------------------------------------------------------------------
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/ducati/ducati-m3.bin:system/vendor/firmware/ducati-m3.bin
-
 
 # CAMERA -------------------------------------------------------------------------------------------
 
@@ -129,7 +124,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/camera/R2_MVEN000_LD0_ND0_IR0_SH0_FL0_SVEN000_DCCID1043/cid1043_ov2655_face_detect_dcc.bin:system/vendor/misc/camera/R2_MVEN000_LD0_ND0_IR0_SH0_FL0_SVEN000_DCCID1043/cid1043_ov2655_face_detect_dcc.bin \
     $(LOCAL_PATH)/prebuilt/camera/R2_MVEN000_LD0_ND0_IR0_SH0_FL0_SVEN000_DCCID1043/cid1043_ov2655_face_tracking_dcc.bin:system/vendor/misc/camera/R2_MVEN000_LD0_ND0_IR0_SH0_FL0_SVEN000_DCCID1043/cid1043_ov2655_face_tracking_dcc.bin \
     $(LOCAL_PATH)/prebuilt/camera/R2_MVEN000_LD0_ND0_IR0_SH0_FL0_SVEN000_DCCID1043/cid1043_ov2655_ldc_cfg_dcc.bin:system/vendor/misc/camera/R2_MVEN000_LD0_ND0_IR0_SH0_FL0_SVEN000_DCCID1043/cid1043_ov2655_ldc_cfg_dcc.bin \
-    $(LOCAL_PATH)/prebuilt/camera/R2_MVEN000_LD0_ND0_IR0_SH0_FL0_SVEN000_DCCID1043/cid1043_ov2655_vnf_cfg_dcc.bin:system/vendor/misc/camera/R2_MVEN000_LD0_ND0_IR0_SH0_FL0_SVEN000_DCCID1043/cid1043_ov2655_vnf_cfg_dcc.bin
+    $(LOCAL_PATH)/prebuilt/camera/R2_MVEN000_LD0_ND0_IR0_SH0_FL0_SVEN000_DCCID1043/cid1043_ov2655_vnf_cfg_dcc.bin:system/vendor/misc/camera/R2_MVEN000_LD0_ND0_IR0_SH0_FL0_SVEN000_DCCID1043/cid1043_ov2655_vnf_cfg_dcc.bin \
+    $(LOCAL_PATH)/prebuilt/camera/ducati-m3.bin:system/vendor/firmware/ducati-m3.bin \
+    $(LOCAL_PATH)/prebuilt/camera/proprietary-version.txt:system/vendor/firmware/proprietary-version.txt
 
 
 # GPS ----------------------------------------------------------------------------------------------
