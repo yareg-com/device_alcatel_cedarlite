@@ -322,5 +322,7 @@ $(call inherit-product-if-exists, hardware/ti/wpan/ti-wpan-products.mk)
 
 PRODUCT_LOCALES := en_US ru_RU
 
+$(call inherit-product-if-exists, frameworks/base/data/sounds/AllAudio.mk)
+$(call inherit-product-if-exists, external/svox/pico/lang/all_pico_languages.mk)
 $(call inherit-product, $(LOCAL_PATH)/custom/product/generic_no_telephony.mk)
 
