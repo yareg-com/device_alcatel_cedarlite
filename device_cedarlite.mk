@@ -37,6 +37,7 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 # CAMERA -------------------------------------------------------------------------------------------
 
 PRODUCT_PACKAGES := \
+    Mms \
     Camera
 
 # PowerHAL
@@ -285,7 +286,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     net.dns1=8.8.8.8 \
     net.dns2=8.8.4.4 \
     ro.hwui.disable_scissor_opt=true \
-    ro.factory.mode=0
+    ro.factory.mode=0 \
+    keyguard.no_require_sim=true \
+    ro.com.android.dateformat=MM-dd-yyyy
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -317,6 +320,7 @@ $(call inherit-product-if-exists, hardware/ti/wpan/ti-wpan-products.mk)
 
 # PRODUCT ------------------------------------------------------------------------------------------
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+PRODUCT_LOCALES := en_US ru_RU
+
+$(call inherit-product, $(LOCAL_PATH)/custom/product/generic_no_telephony.mk)
 
