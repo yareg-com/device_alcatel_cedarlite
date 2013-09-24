@@ -194,7 +194,7 @@ on boot
 
     # CAMERA FLASH LED
     chown system system /sys/sgm3140_flash_led/flash_led
-    chmod 0660 /sys/sgm3140_flash_led/flash_led
+    chmod 0666 /sys/sgm3140_flash_led/flash_led
 
     chown system system /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-000c/sensor_data
     chmod 0660 /sys/devices/platform/omap/omap_i2c.2/i2c-2/2-000c/sensor_data
