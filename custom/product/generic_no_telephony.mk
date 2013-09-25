@@ -66,7 +66,7 @@ $(call inherit-product-if-exists, frameworks/base/data/fonts/fonts.mk)
 $(call inherit-product-if-exists, external/lohit-fonts/fonts.mk)
 $(call inherit-product-if-exists, frameworks/base/data/keyboards/keyboards.mk)
 
-PRODUCT_PACKAGES := \
+PRODUCT_PACKAGES += \
     ApplicationsProvider \
     BackupRestoreConfirmation \
     Contacts \
