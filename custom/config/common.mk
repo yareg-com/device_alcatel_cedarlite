@@ -85,7 +85,7 @@ PRODUCT_PACKAGES += \
     Trebuchet \
     DSPManager \
     libcyanogen-dsp \
-    audio_effects.conf
+    audio_effects.conf \
     Apollo
 
 # Extra tools in CM
