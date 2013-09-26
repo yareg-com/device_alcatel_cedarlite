@@ -135,10 +135,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/gps/gps.omap4.so:system/lib/hw/gps.omap4.so \
     $(LOCAL_PATH)/prebuilt/gps/libgps.so:system/lib/libgps.so \
-	$(LOCAL_PATH)/prebuilt/gps/libgpsservices.so:system/lib/libgpsservices.so \
-	$(LOCAL_PATH)/prebuilt/gps/libmcphalgps.so:system/lib/libmcphalgps.so \
-	$(LOCAL_PATH)/prebuilt/gps/libsupllocationprovider.so:system/lib/libsupllocationprovider.so
-	
+    $(LOCAL_PATH)/prebuilt/gps/libgpsservices.so:system/lib/libgpsservices.so \
+    $(LOCAL_PATH)/prebuilt/gps/libmcphalgps.so:system/lib/libmcphalgps.so \
+    $(LOCAL_PATH)/prebuilt/gps/libsupllocationprovider.so:system/lib/libsupllocationprovider.so \
+    $(LOCAL_PATH)/prebuilt/gps/navd:system/bin/navd
+
 
 # LIGHTS -------------------------------------------------------------------------------------------
 PRODUCT_COPY_FILES += \
