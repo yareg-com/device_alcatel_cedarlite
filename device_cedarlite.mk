@@ -321,7 +321,7 @@ $(call inherit-product-if-exists, hardware/ti/wpan/ti-wpan-products.mk)
 
 # PRODUCT ------------------------------------------------------------------------------------------
 
-PRODUCT_LOCALES := en_US ru_RU fr_FR cn_CN
+PRODUCT_LOCALES := en_US ru_RU fr_FR zh_CN
 
 $(call inherit-product-if-exists, frameworks/base/data/sounds/AllAudio.mk)
 #$(call inherit-product-if-exists, external/svox/pico/lang/all_pico_languages.mk)
