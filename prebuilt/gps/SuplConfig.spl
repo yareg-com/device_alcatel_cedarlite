@@ -1,0 +1,15 @@
+<StorePath> /system/etc/gps/cert/client_keystore.bks
+<ImplType> Socket
+<Localhost> false
+<ProtocolType> Non_TLS
+<slphost_fqdn> supl.google.com
+<port> 7276
+<mcc> 460
+<mnc> 01
+<lac> 42288
+<ci> 23153241
+<msisdn> 918951322358
+<celltype> 1
+<hmcc> 460
+<hmnc> 01
+<slp_type> FQDN_PHONE
