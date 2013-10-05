@@ -138,7 +138,15 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/gps/libgpsservices.so:system/lib/libgpsservices.so \
     $(LOCAL_PATH)/prebuilt/gps/libmcphalgps.so:system/lib/libmcphalgps.so \
     $(LOCAL_PATH)/prebuilt/gps/libsupllocationprovider.so:system/lib/libsupllocationprovider.so \
-    $(LOCAL_PATH)/prebuilt/gps/navd:system/bin/navd
+    $(LOCAL_PATH)/prebuilt/gps/navd:system/bin/navd \
+    $(LOCAL_PATH)/prebuilt/gps/patch-X.0.ce:system/etc/gps/patch/patch-X.0.ce \
+    $(LOCAL_PATH)/prebuilt/gps/client_keystore.bks:system/etc/gps/cert/client_keystore.bks \
+    $(LOCAL_PATH)/prebuilt/gps/GPSCConfigFile.cfg:system/etc/gps/config/GPSCConfigFile.cfg \
+    $(LOCAL_PATH)/prebuilt/gps/GpsConfigFile.txt:system/etc/gps/config/GpsConfigFile.txt \
+    $(LOCAL_PATH)/prebuilt/gps/inavconfigfile.txt:system/etc/gps/config/inavconfigfile.txt \
+    $(LOCAL_PATH)/prebuilt/gps/pathconfigfile.txt:system/etc/gps/config/pathconfigfile.txt \
+    $(LOCAL_PATH)/prebuilt/gps/PeriodicConfFile.cfg:system/etc/gps/config/PeriodicConfFile.cfg \
+    $(LOCAL_PATH)/prebuilt/gps/SuplConfig.spl:system/etc/gps/config/SuplConfig.spl
 
 
 # LIGHTS -------------------------------------------------------------------------------------------
