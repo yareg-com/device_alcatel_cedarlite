@@ -1,0 +1,313 @@
+OMX_SetupTunnel
+__aeabi_unwind_cpp_pr0
+ComponentTable_EventHandler
+ComponentTable_EmptyBufferDone
+ComponentTable_FillBufferDone
+Core_Destroy
+TIMM_OSAL_MutexDelete
+__TIMM_OSAL_TraceFunction
+pCoreInitMutex
+OMX_PrintComponentTable
+tableCount
+componentTable
+Core_Setup
+TIMM_OSAL_MutexCreate
+OMX_BuildComponentTable
+strcmp
+strcpy
+tComponentName
+compName
+OMX_ComponentNameEnum
+count
+OMX_GetComponentsOfRole
+strncpy
+OMX_GetRolesOfComponent
+strlen
+OMX_Deinit
+TIMM_OSAL_MutexObtain
+pthread_mutex_lock
+pthread_mutex_unlock
+pthread_mutex_destroy
+TIMM_OSAL_MutexRelease
+mutex
+OMX_FreeHandle
+dlclose
+free
+OMX_GetHandle
+dlerror
+strcat
+open
+__errno
+read
+strstr
+close
+dlopen
+dlsym
+malloc
+__stack_chk_fail
+__stack_chk_guard
+OMX_Init
+pthread_mutex_init
+sRoleArray
+TIComponentTable_EventHandler
+TIComponentTable_EmptyBufferDone
+TIComponentTable_FillBufferDone
+TIOMX_GetContentPipe
+TIOMX_SetupTunnel
+TIOMX_GetRolesOfComponent
+TIOMX_GetComponentsOfRole
+TIOMX_FreeHandle
+TIOMX_GetHandle
+TIOMX_ComponentNameEnum
+TIOMX_Deinit
+TIOMX_Init
+__cxa_finalize
+__dso_handle
+__INIT_ARRAY__
+__FINI_ARRAY__
+__exidx_end
+__exidx_start
+__data_start
+_edata
+__bss_start
+__bss_start__
+_bss_end__
+__bss_end__
+__end__
+_end
+_stack
+libdl.so
+libmm_osal.so
+libc.so
+libstdc++.so
+libm.so
+libOMX_Core.so
+0F5k"F;F
+ F9F
+IxDyD
+O&N'K
+%~D&H'I,F
+!J@F!I
+XyD"F
+/HFQF
+IxDyD
+IxDyD
+O4L5I
+&|D4K
+bX7F
+01F[
+`X1F
+P	2/
+!H"IxDyD
+ H!IxDyD
+IyD	h
+IxDyD
+IxDyD
+JxDyDzD
+IyD	h
+CHCIxDyD
+BHBIxDyD
+@HAIxDyD
+?H@IxDyD
+=I`X
+<H<IxDyD
+;H;IxDyD
+:H:I;JxDyDzD
+%/F.F
+3H3IxDyD
+2H2IxDyD
+LHMIxDyD
+KHLIxDyD
+JHKIxDyD
+IHJIxDyD
+EHFIxDyD
+DHEIxDyD
+BI`X
+>H?IxDyD
+=H>IxDyD
+<H=I=JxDyDzD
+00FX
+X"HFT
+"KX!(h
+3L3HO
+1|D#X
+0H0IxDyD
+/IcX
+-H.IxDyD
+,H-IxDyD
++H,I,JxDyDzD
+'H(IxDyD
+!H!IxDyD
+IxDyD
+IxDyD
+A>L?K
+<H=IxDyD
+;H;IxDyD
+:H:IxDyD/
+8H8IxD+MyD
+6H7IxDyD
+5H6I6JxDyDzD
+4M}D+
+/H0IxDyD
+.H/IxDyD
+*H+IxDyD
+'~DV
+%p&N~DV
+%p=F
+IxDyD
+IxDyD
+IxDyD
+IxDyD
+IxDyD
+IxDyD
+IxDyD
+IxDyD
+IxDyD
+JxDyDzD
+IxDyD
+IxDyD
+IxDyD
+@FyD
+@F1F
+I@FyD
+IxDyD
+I0FyD
+IxDcNyD
+IxDyD
+IRNyD
+|H|IxDFNyD
+zH{IxDyD
+uHvIxDyD
+tHuIxDyD
+sHtItJxDyDzD
+qJX!zDB
+H`QF(hZF
+aHbIxDyD
+`HaIxDyD
+_H`I`JxDyDzD
+SHTIxDyD
+(L(HO
+1|D#X
+$H%IxDyD
+#H$IxDyD
+"H#I#JxDyDzD+
+IxDyD
+IxDyD
+JxDyDzD
+M(Fp
+xDyD
+FxDyD
+(F!F:F3F
+FxDyD
+(F!F2F
+FxDyD
+(F!F2F
+HyDxD
+FxDyD
+(F!F:F3F
+FxDyD
+(F!F2F
+yDxD
+yDxD
+OMX_GetRolesOfComponent
+Core_Destroy
+OMX_Init
+ERROR: Destruction of default mutex failed
+INFO: --------Component Table:: %d Components found-------------
+INFO: %i:: %s
+INFO:         %s
+INFO: -----------------End Component Table ------------------
+ERROR: Creation of default mutex failed
+ERROR: failed check: cComponentName != NULL
+ERROR:  - returning error: OMX_ErrorBadParameter
+ERROR: failed check: count > 0
+ERROR:  - returning error: OMX_ErrorUndefined
+ERROR:  - %s
+OMX_GetHandle called without calling OMX_Init first
+ERROR: failed check: role != NULL
+ERROR: failed check: pNumComps != NULL
+ERROR: failed check: componentTable[i].pRoleArray[j] != NULL
+ERROR: failed check: pNumRoles != NULL
+ERROR: failed check: strlen(cComponentName) < MAXNAMESIZE
+ERROR:  - returning error: OMX_ErrorInvalidComponentName
+ERROR: Mutex lock failed
+ERROR:  - returning error: OMX_ErrorNone
+OMX_Deinit being called without a corresponding OMX_Init
+ERROR: Core: Error in Mutex lock
+ERROR: Core: Error in Mutex unlock
+ERROR: Mutex release failed
+ERROR: failed check: pHandle != NULL
+OMX_FreeHandle called without calling OMX_Init first
+ERROR: failed check: i != COUNTOF(pModules)
+ERROR: Error From ComponentDeInit..
+ERROR: failed check: NULL != cComponentName
+ERROR: failed check: NULL != pHandle
+ERROR: failed check: NULL != pCallBacks
+ERROR:  - returning error: OMX_ErrorInsufficientResources
+/dev/rproc_user
+ERROR: Can't open misc driver device 0x%x
+ERROR: Can't read from the misc driver
+secure
+ERROR: non-secure component not supported in secure mode
+ERROR: Can't close the misc driver
+ERROR: Failed because %s
+OMX_ComponentInit
+ERROR: failed check: ((pErr == NULL) && (pComponentInit != NULL))
+ERROR:  - returning error: OMX_ErrorInvalidComponent
+ERROR: failed check: (*pHandle != NULL)
+Malloc of pHandle* failed
+ERROR: failed check: eError == OMX_ErrorNone
+ERROR:  - returning error: eError
+Core: Error returned from component SetCallBack
+ERROR: failed check: eOsalError == TIMM_OSAL_ERR_NONE
+Mutex lock failed
+Mutex release failed
+OMX.TI.DUCATI1.VIDEO.DECODER
+video_decoder.mpeg4
+video_decoder.avc
+video_decoder.h263
+video_decoder.wmv
+video_decoder.mpeg2
+video_decoder.svc
+video_decoder.sorspk
+OMX.TI.DUCATI1.VIDEO.DECODER.secure
+OMX.TI.DUCATI1.VIDEO.H264E
+video_encoder.avc
+OMX.TI.DUCATI1.VIDEO.MPEG4E
+video_encoder.mpeg4
+video_encoder.h263
+OMX.TI.DUCATI1.VIDEO.CAMERA
+camera.omx
+OMX.ITTIAM.WMA.decode
+audio_decoder.wma
+OMX.ITTIAM.WMALSL.decode
+audio_decoder.wmalsl
+OMX.ITTIAM.WMAPRO.decode
+audio_decoder.wmapro
+hardware/ti/domx/omx_core/src/OMX_Core.c
+ENTER: TIOMX_GetContentPipe
+ENTER: TIOMX_SetupTunnel
+ENTER: TIOMX_GetRolesOfComponent
+ENTER: TIOMX_GetComponentsOfRole
+ENTER: TIOMX_FreeHandle
+ENTER: TIOMX_GetHandle
+ENTER: TIOMX_ComponentNameEnum
+ENTER: TIOMX_Deinit
+ENTER: TIOMX_Init
+hardware/ti/domx/omx_core/src/OMX_Core_Wrapper.c
+OMX_GetHandle
+OMX_ComponentNameEnum
+OMX_GetComponentsOfRole
+OMX_FreeHandle
+OMX_PrintComponentTable
+OMX_Deinit
+Core_Setup
+TIOMX_ComponentNameEnum
+TIOMX_GetRolesOfComponent
+TIOMX_FreeHandle
+TIOMX_SetupTunnel
+TIOMX_Init
+TIOMX_GetContentPipe
+TIOMX_GetHandle
+TIOMX_GetComponentsOfRole
+TIOMX_Deinit

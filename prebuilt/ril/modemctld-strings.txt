@@ -1,0 +1,96 @@
+/system/bin/linker
+__dso_handle
+__INIT_ARRAY__
+__FINI_ARRAY__
+__aeabi_unwind_cpp_pr0
+open
+close
+__errno
+__stack_chk_fail
+__stack_chk_guard
+__android_log_print
+write
+memcpy
+strerror
+__exidx_end
+__exidx_start
+__data_start
+_edata
+__bss_start
+__bss_start__
+_bss_end__
+__bss_end__
+__end__
+_end
+_stack
+memset
+listen
+strtol
+strlcpy
+accept
+usleep
+getenv
+recv
+sleep
+__libc_init
+alarm
+bsd_signal
+system
+liblog.so
+libcutils.so
+libril.so
+libdl.so
+libc.so
+libstdc++.so
+libm.so
+J#FyDzD
+"~D1F
+J3FyD
+KyDzD
+OyD	h~L
+}J|D!F?
+!2"2
+wI(F
+"yDn#
+!0"&
+0"yD
+dIeJyDzD
+]J!F3FzD
+0!FzD
+ QFZF+F
+ !FzD
+@J!FzD
+!2"HF
+#8FIF
+ !FzD
+1JKF!F
+-HxD
++J!F
+)HxD
+(HxD
+ "JyDzD
+yDzD
+ANDROID_SOCKET_
+modem
+open %s,%s
+modem_recovery
+write %s to %s error
+writefile,write %s to %s FAILURE
+modem_daemon start
+modemctld
+Failed to get socket modemctld errno:%d
+Failed to listen on ril debug socket '%d': %s
+sig_alarm failure
+/dev/xmd-tty11
+open file %s success
+wait client
+error accepting on debug port: %d
+recv is not kill-modem
+recvfrom data:[%s]
+/sys/power/wake_lock
+recovery modem
+/system/bin/busybox/busybox ifconfig rmnet0 down
+/system/bin/busybox/busybox ifconfig rmnet1 down
+modem_daemon exit
+release modem_recovery lock
+/sys/power/wake_unlock

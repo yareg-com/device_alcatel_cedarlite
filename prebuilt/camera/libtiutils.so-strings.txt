@@ -1,0 +1,338 @@
+_ZNK7android6VectorIPN2Ti5Debug10ThreadInfoEE12do_constructEPvj
+__aeabi_unwind_cpp_pr0
+_ZNK7android6VectorIPN2Ti5Debug10ThreadInfoEE10do_destroyEPvj
+_ZNK7android6VectorIPN2Ti5Debug10ThreadInfoEE8do_splatEPvPKvj
+_ZNK7android7RefBase9decStrongEPKv
+pthread_mutex_destroy
+_ZN2Ti5Debug14registerThreadEPNS0_4DataEi
+android_atomic_acquire_cas
+_ZN7android10VectorImpl13finish_vectorEv
+_ZN7android10VectorImplD2Ev
+_ZTVN7android6VectorIPN2Ti5Debug10ThreadInfoEEE
+_ZN7android7RefBaseD2Ev
+_ZTVN2Ti5Debug4DataE
+_ZdlPv
+_ZNK7android6VectorIPN2Ti5Debug10ThreadInfoEE16do_move_backwardEPvPKvj
+memmove
+_ZNK7android6VectorIPN2Ti5Debug10ThreadInfoEE15do_move_forwardEPvPKvj
+_ZNK7android6VectorIPN2Ti5Debug10ThreadInfoEE7do_copyEPvPKvj
+memcpy
+_ZN2Ti5Debug4growEv
+pthread_mutex_lock
+_Znwj
+_ZN7android7RefBaseC2Ev
+_ZN7android10VectorImplC2Ejj
+_ZN7android10VectorImpl11setCapacityEj
+_ZN7android10VectorImpl14insertVectorAtERKS0_j
+_ZN7android10VectorImpl3addEPKv
+_ZNK7android7RefBase9incStrongEPKv
+pthread_mutex_unlock
+_ZN2Ti5DebugC1Ev
+pthread_mutex_init
+__aeabi_atexit
+_ZN2Ti5Debug9sInstanceE
+__dso_handle
+_ZN2Ti5DebugC2Ev
+_ZN2Ti19sIndentStringBufferE
+_ZN7android7RefBase10onFirstRefEv
+_ZN7android7RefBase15onLastStrongRefEPKv
+_ZN7android7RefBase20onIncStrongAttemptedEjPKv
+_ZN7android7RefBase13onLastWeakRefEPKv
+_ZN7android10VectorImpl19reservedVectorImpl1Ev
+_ZN7android10VectorImpl19reservedVectorImpl2Ev
+_ZN7android10VectorImpl19reservedVectorImpl3Ev
+_ZN7android10VectorImpl19reservedVectorImpl4Ev
+_ZN7android10VectorImpl19reservedVectorImpl5Ev
+_ZN7android10VectorImpl19reservedVectorImpl6Ev
+_ZN7android10VectorImpl19reservedVectorImpl7Ev
+_ZN7android10VectorImpl19reservedVectorImpl8Ev
+_ZN7TIUTILS12MessageQueue7getInFdEv
+_ZN7TIUTILS12MessageQueue6setMsgEb
+__android_log_vprint
+__aeabi_unwind_cpp_pr1
+_ZN7TIUTILS12MessageQueue10waitForMsgEPS0_S1_S1_i
+androidGetThreadId
+poll
+_ZN7TIUTILS12MessageQueue7isEmptyEv
+__errno
+strerror
+_ZN7TIUTILS12MessageQueue3putEPNS_7MessageE
+write
+_ZN7TIUTILS12MessageQueue7setInFdEi
+close
+_ZN7TIUTILS12MessageQueueD1Ev
+_ZN7TIUTILS12MessageQueueD2Ev
+_ZN7TIUTILS12MessageQueue3getEPNS_7MessageE
+read
+_ZN7TIUTILS12MessageQueue5clearEv
+_ZN7TIUTILS12MessageQueueC1Ev
+pipe
+_ZN7TIUTILS12MessageQueueC2Ev
+_ZN7android9SemaphoreC2Ev
+_ZN7android9SemaphoreC1Ev
+_ZN7android9Semaphore5CountEv
+sem_getvalue
+_ZN7android9Semaphore6SignalEv
+sem_post
+_ZN7android10ErrorUtils19posixToAndroidErrorEi
+_ZN7android9Semaphore4WaitEv
+sem_wait
+_ZN7android9Semaphore7ReleaseEv
+sem_destroy
+free
+__wrap_free
+_ZN7android9Semaphore6CreateEi
+malloc
+__wrap_malloc
+sem_init
+__aeabi_idiv
+__aeabi_idivmod
+_ZN7android9Semaphore11WaitTimeoutEi
+gettimeofday
+sem_timedwait
+_ZN7android9SemaphoreD1Ev
+_ZN7android9SemaphoreD2Ev
+_ZN7android10ErrorUtils18osalToAndroidErrorEj
+_ZN7android10ErrorUtils17omxToAndroidErrorE13OMX_ERRORTYPE
+__cxa_finalize
+__INIT_ARRAY__
+__FINI_ARRAY__
+malloc_log
+getpid
+init_mapinfo
+pthread_create
+pthread_rwlock_wrlock
+pthread_rwlock_unlock
+memset
+__wrap_calloc
+calloc
+heaptracker_stacktrace
+print_backtrace
+pc_to_mapinfo
+pthread_rwlock_rdlock
+clock_gettime
+pthread_cond_timedwait
+heaptracker_free_leaked_memory
+pthread_cond_signal
+pthread_join
+deinit_mapinfo
+__wrap_realloc
+realloc
+_Unwind_Backtrace
+_Unwind_VRS_Get
+map_to_name
+strstr
+sprintf
+fopen
+strlen
+strtoul
+strcpy
+fgets
+fclose
+__stack_chk_fail
+__stack_chk_guard
+__exidx_end
+__exidx_start
+__data_start
+_edata
+__bss_start
+__bss_start__
+_bss_end__
+__bss_end__
+__end__
+_end
+_stack
+libdl.so
+libui.so
+libbinder.so
+libutils.so
+libcutils.so
+liblog.so
+libc.so
+libstdc++.so
+libm.so
+libtiutils.so
+ AFS
+$P*F
+zY5F
+IxXAF
+0F)F
+f` F
+# Fc`
+L|D$h F
+J FyDzD
+rJsMT
+oIoMyD
+XkJzD
+aJeMT
+}DaI
+X`JzD(
+LJTMT
+PIQMyD}D
+XOJzD
+4JAMT
+}D=I
+X;JzD
+.0*F
+,IyD
+*IyD
+*IyD
+X(JzD
+)IyD
+'IyD
+'IyD
+X%JzD
+KzD{D
+/r.r
+7IyD
+6IyD
+5IyD
+X3JzD
++IyD
+*IyD
+)IyD
+X'JzD
+xh1F
+KzD{D
+8IyD
+7IyD
+6IyD
+X4JzD
+,IyD
++IyD
+*IyD
+X(JzD
+0h9F
+KzD{D
+ F)F
+KzD{D
+##`c`
+ `a`#r F	
+##`(F
+1F"F
+F0Fp
+K{DS
+ 0`:
+!{DzD
+A6KA
+3HxD
+@"zP
+@{D@
+``z#z
+AeyQ
+@{D@
+p!p73
+K%qeq
+#rar
+H{DxD
+,CF!FHF
+,YHL
+BYMB
+G F1F
+ F1F
+N+h1FN
+N+hN
+bxD1F
+ F9F
+1F8h
+)FZF
+0K{D
+yez@
+@{D@
+``z#z
+c"yey
+@{D@
+""pbp
+F|D F
+OpMyD	h
+mH*XmH
+N3hN
+3`ay
+F y@
+A"zQ
+0bz#z
+0/HxD
+&h0F
+L}D|D+h
+L|D F
+"{DxD
+"zHB
+N3hN
+bxD!F
+A3hA
+bxD!F
+A3hA
+bxD!F
+A3hA
+bxD!F
+hxD!F
+G8FAF
+!K{D
+`!K{D
+|D}D
+&h0F
+*h2*
+@XK@
+BXKy
+#SHC
+c!F*FxD7h
+A3hA
+bxD!F
+A3hA
+bxD!F
+A3hA
+bxD!F
+GHFQF
+hxD*F
+GHFQF
+iFxD
+`ah#h
+FpG-
+F2H-
+yD0F
+*I0FyD
+2}x*
+"``HF
+` F@
+%`%F
+                                                                                                                                
+MessageQueue
+(%x) %s  %s:%d %s - queue1 pointer is NULL
+hardware/ti/omap4xxx/libtiutils/MessageQueue.cpp
+(%x) %s  %s:%d %s - read descriptor not initialized for message queue1
+(%x) %s  %s:%d %s - read descriptor not initialized for message queue2
+(%x) %s  %s:%d %s - read descriptor not initialized for message queue3
+(%x) %s  %s:%d %s - Message queue returned error %d
+(%x) %s  %s:%d %s - read descriptor not initialized for message queue
+(%x) %s  %s:%d %s - poll() error: %s
+(%x) %s  %s:%d %s - msg is NULL
+(%x) %s  %s:%d %s - write descriptor not initialized for message queue
+(%x) %s  %s:%d %s - write() error: %s
+(%x) %s  %s:%d %s - read() error: %s
+(%x) %s  %s:%d %s - Error while openning pipe: %s
++++ ALLOCATION %p SIZE %d HAS A CORRUPTED FRONT GUARD
++++ ALLOCATION %p HAS A CORRUPTED FRONT GUARD (NOT DUMPING STACKTRACE)
++++ REAR GUARD MISMATCH [%d, %d)
++++ ALLOCATION %p SIZE %d HAS A CORRUPTED REAR GUARD
+DEBUG
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+(unknown)
+	#%02d  pc %08x  %s
++++ ALLOCATION %p HAS INVALID TAG %08x (NOT DUMPING STACKTRACE)
++++ ALLOCATION %p SIZE %d WAS USED AFTER BEING FREED
++++ ALLOCATION %p SIZE %d ALLOCATED HERE:
++++ ALLOCATION %p SIZE %d FREED HERE:
++++ THERE ARE %d LEAKED ALLOCATIONS
++++ DELETING %d BYTES OF LEAKED MEMORY AT %p (%d REMAINING)
++++ ALLOCATION %p SIZE %d BYTES MULTIPLY FREED!
++++ ALLOCATION %p SIZE %d FIRST FREED HERE:
++++ ALLOCATION %p SIZE %d NOW BEING FREED HERE:
++++ ALLOCATION %p IS CORRUPTED OR NOT ALLOCATED VIA TRACKER!
++++ REALLOCATION %p SIZE %d OF FREED MEMORY!
++++ ALLOCATION %p SIZE %d NOW BEING REALLOCATED HERE:
++++ REALLOCATION %p SIZE %d IS CORRUPTED OR NOT ALLOCATED VIA TRACKER!
+/proc/%d/maps
+MessageQueue
+waitForMsg
+isEmpty
+clear
