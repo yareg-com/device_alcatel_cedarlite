@@ -322,6 +322,12 @@ service modem_ctr_daemon /system/bin/modemctld
     class main
     socket modemctld stream 660 root radio
 
+service pppd_gprs /system/bin/mksh /etc/ppp/init.gprs-pppd
+    class main
+    user root
+    group radio cache inet misc
+    disabled
+
 service down_daemon /system/bin/kill-modem
     class main
     user root

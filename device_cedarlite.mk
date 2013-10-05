@@ -183,7 +183,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/ril/libXMM6260-ril.so:system/lib/libXMM6260-ril.so \
     $(LOCAL_PATH)/prebuilt/ril/modemctld:system/bin/modemctld \
-    $(LOCAL_PATH)/prebuilt/ril/kill-modem:system/bin/kill-modem
+    $(LOCAL_PATH)/prebuilt/ril/chat:system/bin/chat \
+    $(LOCAL_PATH)/prebuilt/ril/kill-modem:system/bin/kill-modem \
+    $(LOCAL_PATH)/prebuilt/ril/init.gprs-pppd:system/ets/ppp/init.gprs-pppd \
+    $(LOCAL_PATH)/prebuilt/ril/chap-secrets:system/etc/ppp/chap-secrets \
+    $(LOCAL_PATH)/prebuilt/ril/connect.chat:system/etc/ppp/connect.chat \
+    $(LOCAL_PATH)/prebuilt/ril/disconnect.chat:system/etc/ppp/disconnect.chat \
+    $(LOCAL_PATH)/prebuilt/ril/ip-down:system/etc/ppp/ip-down \
+    $(LOCAL_PATH)/prebuilt/ril/ip-up:system/etc/ppp/ip-up \
 
 
 # AUDIO --------------------------------------------------------------------------------------------

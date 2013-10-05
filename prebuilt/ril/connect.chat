@@ -1,0 +1,22 @@
+#at script for China Mobile
+TIMEOUT			15
+ABORT			'DELAYED'
+ABORT			'BUSY'
+ABORT			'ERROR'
+TIMEOUT			15
+ABORT			'DELAYED'
+ABORT			'BUSY'
+ABORT			'ERROR'
+ABORT			'NO DIALTONE'
+ABORT			'NO CARRIER'
+TIMEOUT			10
+
+""			AT
+
+OK			AT&FE0V1X1&D2&C1S0=0 
+
+OK			ATDT*99# 
+
+CONNECT       
+   
+
