@@ -173,7 +173,9 @@ PRODUCT_COPY_FILES += \
 # RIL ----------------------------------------------------------------------------------------------
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/ril/libXMM6260-ril.so:system/lib/libXMM6260-ril.so
+    $(LOCAL_PATH)/prebuilt/ril/libXMM6260-ril.so:system/lib/libXMM6260-ril.so \
+    $(LOCAL_PATH)/prebuilt/ril/modemctld:system/bin/modemctld \
+    $(LOCAL_PATH)/prebuilt/ril/kill-modem:system/bin/kill-modem
 
 
 # AUDIO --------------------------------------------------------------------------------------------
