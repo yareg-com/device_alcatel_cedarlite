@@ -144,9 +144,9 @@ BOARD_GPS_LIBRARIES          := libgps
 
 # AUDIO --------------------------------------------------------------------------------------------
 BOARD_USES_GENERIC_AUDIO := false
-#BUILD_WITH_ALSA_UTILS := false
 TARGET_PROVIDES_LIBAUDIO := true
-COMMON_GLOBAL_CFLAGS += -DICS_AUDIO_BLOB
+COMMON_GLOBAL_CFLAGS     += -DICS_AUDIO_BLOB
+ICS_AUDIO_BLOB           := true
 
 
 # CAMERA -------------------------------------------------------------------------------------------
