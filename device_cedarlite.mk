@@ -23,7 +23,7 @@ DEVICE_PACKAGE_OVERLAYS := device/alcatel/cedarlite/overlay
 
 # XHDPI --------------------------------------------------------------------------------------------
 
-PRODUCT_AAPT_CONFIG      := normal hdpi xhdpi
+PRODUCT_AAPT_CONFIG      := hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 
