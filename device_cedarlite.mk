@@ -298,6 +298,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # OVERRIDES ----------------------------------------------------------------------------------------
 
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.low_ram=true \
     ro.setupwizard.enable_bypass=1 \
     ro.opengles.version=131072 \
     hwui.render_dirty_regions=false \
