@@ -45,7 +45,7 @@ TARGET_NO_RADIOIMAGE := true
 
 
 # KERNEL -------------------------------------------------------------------------------------------
-BOARD_KERNEL_CMDLINE   := console=ttyO2,115200n8 mem=1G vmalloc=768M omap_wdt.timer_margin=30 androidboot.console=ttyO2 no_console_suspend androidboot.serialno=${androidboot.serialno} androidboot.bootloader=${androidboot.bootloader} androidboot.hardware=${androidboot.hardware}
+BOARD_KERNEL_CMDLINE   := console=ttyO2,115200n8 mem=1G vmalloc=768M omap_wdt.timer_margin=30 androidboot.console=ttyO2 no_console_suspend androidboot.serialno=${androidboot.serialno} androidboot.bootloader=${androidboot.bootloader} androidboot.hardware=${androidboot.hardware} androidboot.selinux=permissive
 BOARD_KERNEL_BASE      := 0x80007FC0
 BOARD_KERNEL_PAGESIZE  := 2048
 TARGET_PREBUILT_KERNEL := device/alcatel/cedarlite/kernel
@@ -144,10 +144,11 @@ BOARD_GPS_LIBRARIES          := libgps
 
 
 # AUDIO --------------------------------------------------------------------------------------------
-BOARD_USES_GENERIC_AUDIO := false
-TARGET_PROVIDES_LIBAUDIO := true
-COMMON_GLOBAL_CFLAGS     += -DICS_AUDIO_BLOB
-ICS_AUDIO_BLOB           := true
+BOARD_USES_GENERIC_AUDIO         := false
+TARGET_PROVIDES_LIBAUDIO         := true
+COMMON_GLOBAL_CFLAGS             += -DICS_AUDIO_BLOB
+ICS_AUDIO_BLOB                   := true
+BOARD_HAVE_PRE_KITKAT_AUDIO_BLOB := true
 
 
 # CAMERA -------------------------------------------------------------------------------------------
