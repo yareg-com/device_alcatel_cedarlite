@@ -180,6 +180,13 @@ BOARD_FLASH_BLOCK_SIZE             := 4096
 BOARD_USES_SECURE_SERVICES := true
 
 
+
+# BOOTANIMATION ------------------------------------------------------------------------------------
+TARGET_BOOTANIMATION_PRELOAD       := true
+TARGET_BOOTANIMATION_TEXTURE_CACHE := true
+TARGET_BOOTANIMATION_USE_RGB565    := true
+
+
 # RECOVERY -----------------------------------------------------------------------------------------
 BOARD_HAS_NO_SELECT_BUTTON      := true
 #BOARD_HAS_LARGE_FILESYSTEM     := true
