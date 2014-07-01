@@ -22,9 +22,10 @@ TARGET_ARCH_VARIANT     := armv7-a-neon
 TARGET_ARCH_VARIANT_CPU := cortex-a9
 TARGET_ARCH_VARIANT_FPU := neon
 
-TARGET_CPU_ABI  := armeabi-v7a
-TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_SMP  := true
+TARGET_CPU_VARIANT := cortex-a9
+TARGET_CPU_ABI     := armeabi-v7a
+TARGET_CPU_ABI2    := armeabi
+TARGET_CPU_SMP     := true
 
 ARCH_ARM_HAVE_TLS_REGISTER        := true
 ARCH_ARM_HAVE_32_BYTE_CACHE_LINES := true
@@ -58,9 +59,9 @@ TARGET_PROVIDES_INIT_TARGET_RC := true
 
 
 # HWCOMPOSER ---------------------------------------------------------------------------------------
-BOARD_USES_HWCOMPOSER   := true
-TARGET_HAS_WAITFORVSYNC := true
-
+BOARD_USES_HWCOMPOSER                 := true
+TARGET_HAS_WAITFORVSYNC               := true
+TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 
 # OMAP ENHANCEMENT ---------------------------------------------------------------------------------
 OMAP_ENHANCEMENT := true
