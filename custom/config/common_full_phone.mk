@@ -2,7 +2,7 @@
 $(call inherit-product, $(LOCAL_PATH)/common.mk)
 
 # Bring in all audio files
-include frameworks/base/data/sounds/NewAudio.mk
+include frameworks/base/data/sounds/OriginalAudio.mk
 
 # Include CM audio files
 include vendor/cm/config/cm_audio.mk
