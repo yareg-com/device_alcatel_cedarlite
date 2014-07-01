@@ -86,9 +86,6 @@ USE_ALL_OPTIMIZED_STRING_FUNCS := true
 
 COMMON_GLOBAL_CFLAGS += -DOMAP_ENHANCEMENT -DOMAP_ENHANCEMENT_BURST_CAPTURE
 
-#COMMON_GLOBAL_CFLAGS += -DMR0_AUDIO_BLOB
-#MR0_AUDIO_BLOB := true
-
 
 # 2D/3D GPU ----------------------------------------------------------------------------------------
 BOARD_EGL_CFG       := device/alcatel/cedarlite/egl.cfg
@@ -148,7 +145,7 @@ BOARD_USES_GENERIC_AUDIO         := false
 TARGET_PROVIDES_LIBAUDIO         := true
 COMMON_GLOBAL_CFLAGS             += -DICS_AUDIO_BLOB
 ICS_AUDIO_BLOB                   := true
-BOARD_HAVE_PRE_KITKAT_AUDIO_BLOB := true
+#OARD_HAVE_PRE_KITKAT_AUDIO_BLOB := true
 
 
 # CAMERA -------------------------------------------------------------------------------------------
@@ -180,7 +177,7 @@ BOARD_FLASH_BLOCK_SIZE             := 4096
 
 
 # SECURITY -----------------------------------------------------------------------------------------
-#BOARD_USES_SECURE_SERVICES := true
+BOARD_USES_SECURE_SERVICES := true
 
 
 # RECOVERY -----------------------------------------------------------------------------------------
