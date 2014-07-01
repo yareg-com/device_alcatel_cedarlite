@@ -52,7 +52,7 @@ on init
     mount tmpfs tmpfs /mnt/fuse mode=0775,gid=1000
 
     write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor 12D1
+    write /sys/class/android_usb/android0/idVendor 1064
     write /sys/class/android_usb/android0/idProduct 1037 
     write /sys/class/android_usb/android0/iManufacturer TCL
     write /sys/class/android_usb/android0/iProduct OT986
