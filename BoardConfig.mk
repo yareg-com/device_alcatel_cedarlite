@@ -133,7 +133,7 @@ BOARD_HAVE_BLUETOOTH := true
 
 # RIL ----------------------------------------------------------------------------------------------
 TARGET_PROVIDES_LIBRIL := device/alcatel/cedarlite/prebuilt/ril/libXMM6260-ril.so
-
+#BOARD_MODEM_TYPE       := xmm6260
 
 # GPS ----------------------------------------------------------------------------------------------
 BOARD_VENDOR_TI_GPS_HARDWARE := omap4
