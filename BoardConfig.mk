@@ -153,7 +153,7 @@ USE_CAMERA_STUB          := false
 BOARD_USES_TI_CAMERA_HAL := true
 COMMON_GLOBAL_CFLAGS     += -DDISABLE_HW_ID_MATCH_CHECK
 COMMON_GLOBAL_CFLAGS     += -DICS_CAMERA_BLOB
-
+#COMMON_GLOBAL_CFLAGS    += -DNEEDS_VECTORIMPL_SYMBOLS
 
 # FM RADIO -----------------------------------------------------------------------------------------
 BOARD_HAVE_FM_RADIO := true
