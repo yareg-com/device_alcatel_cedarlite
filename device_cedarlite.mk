@@ -79,21 +79,21 @@ PRODUCT_COPY_FILES += \
 # PERMISSIONS --------------------------------------------------------------------------------------
 
 PRODUCT_COPY_FILES += \
-    frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-    frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
-    frameworks/base/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
-    frameworks/base/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
-    frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
-    frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-    frameworks/base/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
-    frameworks/base/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
-    frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
-    frameworks/base/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
-    frameworks/base/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
-    frameworks/base/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
-    frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
-    frameworks/base/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
-    frameworks/base/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml
+    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
+    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
+    frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
+    frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
+    frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
+    frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+    frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
+    frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
+    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
+    frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
+    frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
+    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
+    frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
+    frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
+    frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml
 
 
 # POWERVR_SGX540_120 GPU ---------------------------------------------------------------------------
@@ -150,8 +150,11 @@ PRODUCT_COPY_FILES += \
 
 
 # LIGHTS -------------------------------------------------------------------------------------------
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/lights/lights.omap4.so:system/lib/hw/lights.omap4.so
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_PATH)/prebuilt/lights/lights.omap4.so:system/lib/hw/lights.omap4.so
+PRODUCT_PACKAGES := \
+	lights.cedarlite
+
 
 
 # SENSORS ------------------------------------------------------------------------------------------
@@ -298,10 +301,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # OVERRIDES ----------------------------------------------------------------------------------------
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    #ro.config.low_ram=true \
-    
-    ro.bq.gpu_to_cpu_unsupported=1
-    ro.zygote.disable_gl_preload=true
     ro.setupwizard.enable_bypass=1 \
     ro.opengles.version=131072 \
     hwui.render_dirty_regions=false \
@@ -312,8 +311,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true \
     ro.com.android.dateformat=MM-dd-yyyy
 
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=$(shell date +"%s")
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID=KVT49L-yareg
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 
 # ADB ROOT -----------------------------------------------------------------------------------------
@@ -345,7 +343,11 @@ $(call inherit-product-if-exists, hardware/ti/wpan/ti-wpan-products.mk)
 
 PRODUCT_LOCALES := en_US ru_RU fr_FR zh_CN
 
-$(call inherit-product-if-exists, frameworks/base/data/sounds/AllAudio.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
+
+#$(call inherit-product-if-exists, frameworks/base/data/sounds/AllAudio.mk)
 #$(call inherit-product-if-exists, external/svox/pico/lang/all_pico_languages.mk)
-$(call inherit-product, $(LOCAL_PATH)/custom/product/generic_no_telephony.mk)
+#$(call inherit-product, $(LOCAL_PATH)/custom/product/generic_no_telephony.mk)
 

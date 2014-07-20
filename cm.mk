@@ -1,13 +1,16 @@
+$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+$(call inherit-product, vendor/cm/config/gsm.mk)
+
 # CEDARLITE ----------------------------------------------------------------------------------------
 $(call inherit-product, $(LOCAL_PATH)/device_cedarlite.mk)
 
 
 # GSM ----------------------------------------------------------------------------------------------
-$(call inherit-product, vendor/cm/config/gsm.mk)
+#$(call inherit-product, vendor/cm/config/gsm.mk)
 
 
 # FULL PHONE ---------------------------------------------------------------------------------------
-$(call inherit-product, $(LOCAL_PATH)/custom/config/common_full_phone.mk)
+#$(call inherit-product, $(LOCAL_PATH)/custom/config/common_full_phone.mk)
 
 
 # BOOT ANIMATION -----------------------------------------------------------------------------------

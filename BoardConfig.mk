@@ -1,6 +1,6 @@
 #
 # Copyright (C) 2012 The CyanogenMod Project
-# Copyright (C) 2013 yareg.com
+# Copyright (C) 2014 yareg.com
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,12 +22,13 @@ TARGET_ARCH_VARIANT     := armv7-a-neon
 TARGET_ARCH_VARIANT_CPU := cortex-a9
 TARGET_ARCH_VARIANT_FPU := neon
 
+# CPU ----------------------------------------------------------------------------------------------
 TARGET_CPU_VARIANT := cortex-a9
 TARGET_CPU_ABI     := armeabi-v7a
 TARGET_CPU_ABI2    := armeabi
 TARGET_CPU_SMP     := true
 
-ARCH_ARM_HAVE_TLS_REGISTER        := true
+#ARCH_ARM_HAVE_TLS_REGISTER        := true
 ARCH_ARM_HAVE_32_BYTE_CACHE_LINES := true
 
 TARGET_GLOBAL_CFLAGS   += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
@@ -42,16 +43,19 @@ TARGET_BOOTLOADER_BOARD_NAME := cedarlite
 
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
+#TARGET_NO_KERNEL     := true
+
+TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 
 
 # KERNEL -------------------------------------------------------------------------------------------
-BOARD_KERNEL_CMDLINE   := console=ttyO2,115200n8 mem=1G vmalloc=768M omap_wdt.timer_margin=30 androidboot.console=ttyO2 no_console_suspend androidboot.serialno=${androidboot.serialno} androidboot.bootloader=${androidboot.bootloader} androidboot.hardware=${androidboot.hardware} androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE   := console=ttyO2,115200n8 mem=1G vmalloc=768M omap_wdt.timer_margin=30 androidboot.console=ttyO2 no_console_suspend androidboot.serialno=${androidboot.serialno} androidboot.bootloader=${androidboot.bootloader} androidboot.hardware=${androidboot.hardware}
 BOARD_KERNEL_BASE      := 0x80007FC0
 BOARD_KERNEL_PAGESIZE  := 2048
 TARGET_PREBUILT_KERNEL := device/alcatel/cedarlite/kernel
 
 #TARGET_KERNEL_SOURCE := kernel/alcatel/cedarlite
-#TARGET_KERNEL_CONFIG := cedarlite_defconfig
+#TARGET_KERNEL_CONFIG := cyanogenmod_cedarlite_defconfig
 
 
 # RAMDISK ------------------------------------------------------------------------------------------
@@ -59,9 +63,9 @@ TARGET_PROVIDES_INIT_TARGET_RC := true
 
 
 # HWCOMPOSER ---------------------------------------------------------------------------------------
-BOARD_USES_HWCOMPOSER                 := true
-TARGET_HAS_WAITFORVSYNC               := true
-TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
+BOARD_USES_HWCOMPOSER   := true
+TARGET_HAS_WAITFORVSYNC := true
+
 
 # OMAP ENHANCEMENT ---------------------------------------------------------------------------------
 OMAP_ENHANCEMENT := true
@@ -86,6 +90,9 @@ USE_ALL_OPTIMIZED_STRING_FUNCS := true
 
 COMMON_GLOBAL_CFLAGS += -DOMAP_ENHANCEMENT -DOMAP_ENHANCEMENT_BURST_CAPTURE
 
+#COMMON_GLOBAL_CFLAGS += -DMR0_AUDIO_BLOB
+#MR0_AUDIO_BLOB := true
+
 
 # 2D/3D GPU ----------------------------------------------------------------------------------------
 BOARD_EGL_CFG       := device/alcatel/cedarlite/egl.cfg
@@ -95,7 +102,7 @@ USE_OPENGL_RENDERER := true
 
 
 # LIGHTS -------------------------------------------------------------------------------------------
-TARGET_PROVIDES_LIBLIGHTS := true
+#TARGET_PROVIDES_LIBLIGHTS := true
 
 
 # POWERHAL -----------------------------------------------------------------------------------------
@@ -132,8 +139,9 @@ BOARD_HAVE_BLUETOOTH := true
 
 
 # RIL ----------------------------------------------------------------------------------------------
-TARGET_PROVIDES_LIBRIL := device/alcatel/cedarlite/prebuilt/ril/libXMM6260-ril.so
-#BOARD_MODEM_TYPE       := xmm6260
+TARGET_PROVIDES_LIBRIL    := device/alcatel/cedarlite/prebuilt/ril/libXMM6260-ril.so
+BOARD_RIL_NO_CELLINFOLIST := true
+
 
 # GPS ----------------------------------------------------------------------------------------------
 BOARD_VENDOR_TI_GPS_HARDWARE := omap4
@@ -141,19 +149,17 @@ BOARD_GPS_LIBRARIES          := libgps
 
 
 # AUDIO --------------------------------------------------------------------------------------------
-BOARD_USES_GENERIC_AUDIO         := false
-TARGET_PROVIDES_LIBAUDIO         := true
-COMMON_GLOBAL_CFLAGS             += -DICS_AUDIO_BLOB
-ICS_AUDIO_BLOB                   := true
-#OARD_HAVE_PRE_KITKAT_AUDIO_BLOB := true
+BOARD_USES_GENERIC_AUDIO := false
+#TARGET_PROVIDES_LIBAUDIO := true
+#COMMON_GLOBAL_CFLAGS     += -DICS_AUDIO_BLOB
+#ICS_AUDIO_BLOB           := true
 
 
 # CAMERA -------------------------------------------------------------------------------------------
 USE_CAMERA_STUB          := false
 BOARD_USES_TI_CAMERA_HAL := true
 COMMON_GLOBAL_CFLAGS     += -DDISABLE_HW_ID_MATCH_CHECK
-COMMON_GLOBAL_CFLAGS     += -DICS_CAMERA_BLOB
-#COMMON_GLOBAL_CFLAGS    += -DNEEDS_VECTORIMPL_SYMBOLS
+
 
 # FM RADIO -----------------------------------------------------------------------------------------
 BOARD_HAVE_FM_RADIO := true
@@ -178,27 +184,17 @@ BOARD_FLASH_BLOCK_SIZE             := 4096
 
 
 # SECURITY -----------------------------------------------------------------------------------------
-BOARD_USES_SECURE_SERVICES := true
-
-
-
-# BOOTANIMATION ------------------------------------------------------------------------------------
-TARGET_BOOTANIMATION_PRELOAD       := true
-TARGET_BOOTANIMATION_TEXTURE_CACHE := true
-TARGET_BOOTANIMATION_USE_RGB565    := true
+#BOARD_USES_SECURE_SERVICES := true
 
 
 # RECOVERY -----------------------------------------------------------------------------------------
-BOARD_HAS_NO_SELECT_BUTTON      := true
-#BOARD_HAS_LARGE_FILESYSTEM     := true
-BOARD_USES_MMCUTILS             := true
-BOARD_USE_CUSTOM_RECOVERY_FONT  := \"roboto_15x24.h\"
-BOARD_UMS_LUNFILE               := "/sys/class/android_usb/f_mass_storage/lun/file"
-TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/f_mass_storage/lun/file"
-TARGET_RECOVERY_INITRC          := device/alcatel/cedarlite/recovery/init.rc
-#TARGET_PREBUILT_RECOVERY_KERNEL := device/alcatel/cedarlite/recovery_kernel
-TARGET_RECOVERY_FSTAB           := device/alcatel/cedarlite/ramdisk/fstab.cedarlite
-RECOVERY_CHARGEMODE             := true
-RECOVERY_FSTAB_VERSION          := 2
+BOARD_HAS_NO_SELECT_BUTTON       := true
+#BOARD_USES_MMCUTILS             := true
+BOARD_UMS_LUNFILE                := "/sys/class/android_usb/f_mass_storage/lun/file"
+TARGET_USE_CUSTOM_LUN_FILE_PATH  := "/sys/class/android_usb/f_mass_storage/lun/file"
+TARGET_RECOVERY_INITRC           := device/alcatel/cedarlite/recovery/init.rc
+TARGET_RECOVERY_FSTAB            := device/alcatel/cedarlite/ramdisk/fstab.cedarlite
+RECOVERY_FSTAB_VERSION           := 2
+BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/alcatel/cedarlite/recovery/recovery_keys.c
 
 

@@ -23,8 +23,7 @@ on init
     mkdir /system
     mkdir /data
     mkdir /cache
-    mkdir /custom
-    
+    mkdir /cust
     mount tmpfs tmpfs /tmp
 
     setprop ro.hwboottype boot_recovery
@@ -47,15 +46,15 @@ on init
     # Directory for staging bindmounts
     mkdir /mnt/secure/staging 0700 root root
 
-    # Fuse public mount points
+    # Fuse public mount points.
     mkdir /mnt/fuse 0700 root system
     mount tmpfs tmpfs /mnt/fuse mode=0775,gid=1000
 
     write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor 1064
+    write /sys/class/android_usb/android0/idVendor 12D1
     write /sys/class/android_usb/android0/idProduct 1037 
-    write /sys/class/android_usb/android0/iManufacturer TCL
-    write /sys/class/android_usb/android0/iProduct OT986
+    write /sys/class/android_usb/android0/iManufacturer huawei
+    write /sys/class/android_usb/android0/iProduct U9500
     write /sys/class/android_usb/android0/iSerial cleanup 
     write /sys/class/android_usb/android0/functions mass_storage,adb
     write /sys/class/android_usb/android0/enable 1
