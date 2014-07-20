@@ -196,5 +196,6 @@ TARGET_RECOVERY_INITRC           := device/alcatel/cedarlite/recovery/init.rc
 TARGET_RECOVERY_FSTAB            := device/alcatel/cedarlite/ramdisk/fstab.cedarlite
 RECOVERY_FSTAB_VERSION           := 2
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/alcatel/cedarlite/recovery/recovery_keys.c
+RECOVERY_VARIANT                 := philz
 
 
