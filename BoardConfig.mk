@@ -189,13 +189,17 @@ BOARD_FLASH_BLOCK_SIZE             := 4096
 
 # RECOVERY -----------------------------------------------------------------------------------------
 BOARD_HAS_NO_SELECT_BUTTON       := true
-#BOARD_USES_MMCUTILS             := true
+BOARD_USES_MMCUTILS              := true
 BOARD_UMS_LUNFILE                := "/sys/class/android_usb/f_mass_storage/lun/file"
 TARGET_USE_CUSTOM_LUN_FILE_PATH  := "/sys/class/android_usb/f_mass_storage/lun/file"
 TARGET_RECOVERY_INITRC           := device/alcatel/cedarlite/recovery/init.rc
 TARGET_RECOVERY_FSTAB            := device/alcatel/cedarlite/ramdisk/fstab.cedarlite
 RECOVERY_FSTAB_VERSION           := 2
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/alcatel/cedarlite/recovery/recovery_keys.c
+#BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/alcatel/cedarlite/recovery/recovery_keys.c
 RECOVERY_VARIANT                 := philz
+BOARD_USE_NTFS_3G                := false
+TARGET_COMMON_NAME               := Cedarlite
+BRIGHTNESS_SYS_FILE              := "/sys/class/backlight/lcd-backlight/brightness"
+BATTERY_LEVEL_PATH               := "/sys/class/power_supply/twl6030_battery/capacity"
 
 

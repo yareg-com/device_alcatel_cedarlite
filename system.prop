@@ -98,3 +98,5 @@ ro.c_986.earpiece.voice.vol.le3=118
 ro.c_986.earpiece.voice.vol.le2=116
 ro.c_986.earpiece.voice.vol.le1=100
 ro.c_986.earpiece.voice.vol.le0=99
+
+ro.build.selinux=0
