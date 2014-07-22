@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 $(call inherit-product, $(LOCAL_PATH)/custom/config/common_full_phone.mk)
+=======
+$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+$(call inherit-product, vendor/cm/config/gsm.mk)
+>>>>>>> 19db8e59b86a825ffd157b213f86663510e2c6dc
 
 # CEDARLITE ----------------------------------------------------------------------------------------
 $(call inherit-product, $(LOCAL_PATH)/device_cedarlite.mk)

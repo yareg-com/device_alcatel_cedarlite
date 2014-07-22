@@ -16,12 +16,15 @@
 #
 
 
+<<<<<<< HEAD
 $(call inherit-product, $(LOCAL_PATH)/custom/product/full_base.mk)
 $(call inherit-product, $(LOCAL_PATH)/custom/product/telephony.mk)
 $(call inherit-product, $(LOCAL_PATH)/custom/product/generic_no_telephony.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
 
+=======
+>>>>>>> 19db8e59b86a825ffd157b213f86663510e2c6dc
 # OVERLAY ------------------------------------------------------------------------------------------
 
 DEVICE_PACKAGE_OVERLAYS := device/alcatel/cedarlite/overlay
@@ -42,9 +45,15 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # CAMERA -------------------------------------------------------------------------------------------
 
+<<<<<<< HEAD
 #PRODUCT_PACKAGES := \
 #    Mms \
 #    Camera
+=======
+PRODUCT_PACKAGES := \
+    Mms \
+    Camera
+>>>>>>> 19db8e59b86a825ffd157b213f86663510e2c6dc
 
 # PowerHAL
 #PRODUCT_PACKAGES += \
@@ -71,8 +80,14 @@ PRODUCT_COPY_FILES += \
 # KEY MAPS -----------------------------------------------------------------------------------------
 
 PRODUCT_COPY_FILES += \
+<<<<<<< HEAD
     $(LOCAL_PATH)/prebuilt/input/gpio-keys.kl:system/usr/keychars/gpio-keys.kl \
     $(LOCAL_PATH)/prebuilt/input/gpio-keys.kcm:system/usr/keychars/gpio-keys.kcm \
+=======
+    $(LOCAL_PATH)/prebuilt/input/omap4-keypad.kl:system/usr/keylayout/omap4-keypad.kl \
+    $(LOCAL_PATH)/prebuilt/input/omap4-keypad.kcm:system/usr/keychars/omap4-keypad.kcm \
+    $(LOCAL_PATH)/prebuilt/input/twl6030_pwrbutton.kl:system/usr/keylayout/twl6030_pwrbutton.kl
+>>>>>>> 19db8e59b86a825ffd157b213f86663510e2c6dc
 
 
 # TOUCHSCREEN --------------------------------------------------------------------------------------
@@ -348,10 +363,20 @@ $(call inherit-product-if-exists, hardware/ti/wpan/ti-wpan-products.mk)
 
 PRODUCT_LOCALES := en_US ru_RU fr_FR zh_CN
 
+<<<<<<< HEAD
 #$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 
 #$(call inherit-product-if-exists, frameworks/base/data/sounds/AllAudio.mk)
 #$(call inherit-product-if-exists, external/svox/pico/lang/all_pico_languages.mk)
 
+=======
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
+
+#$(call inherit-product-if-exists, frameworks/base/data/sounds/AllAudio.mk)
+#$(call inherit-product-if-exists, external/svox/pico/lang/all_pico_languages.mk)
+#$(call inherit-product, $(LOCAL_PATH)/custom/product/generic_no_telephony.mk)
+>>>>>>> 19db8e59b86a825ffd157b213f86663510e2c6dc
 

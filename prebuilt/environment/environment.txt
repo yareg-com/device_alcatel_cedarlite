@@ -1,6 +1,10 @@
 ramargs=setenv bootargs console=ttyO2,115200n8 mem=1G vmalloc=768M vram=32M omapfb.vram=0:16M omap_wdt.timer_margin=30 androidboot.console=ttyO2 no_console_suspend=1 androidboot.serialno=${androidboot.serialno} androidboot.bootloader=${androidboot.bootloader} androidboot.hardware=${androidboot.hardware} ro.factory.mode=0 hw_version=${hw_version}
 bootcmd=run ramargs; mmcinit 1; mmc 1 read 0xD00 0x80007FC0 0x00500000; mmc 1 read 0x5D00 0x81000000 0x00100000; bootm 0x80007FC0 0x81000000
+<<<<<<< HEAD
 recoverycmd=run ramargs; mmcinit 1; mmc 1 read 0xD00 0x80007FC0 0x00500000; mmc 1 read 0x9D00 0x81000000 0x00400000; bootm 0x80007FC0 0x81000000
+=======
+recoverycmd=run ramargs; mmcinit 1; mmc 1 read 0xD00 0x80007FC0 0x00500000; mmc 1 read 0x9D00 0x81000000 0x00300000; bootm 0x80007FC0 0x81000000
+>>>>>>> 19db8e59b86a825ffd157b213f86663510e2c6dc
 androidboot.serialno=0
 androidboot.bootloader=0
 androidboot.hardware=cedarlite

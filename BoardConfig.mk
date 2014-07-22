@@ -202,6 +202,10 @@ TARGET_COMMON_NAME               := Cedarlite
 BRIGHTNESS_SYS_FILE              := "/sys/class/backlight/lcd-backlight/brightness"
 BATTERY_LEVEL_PATH               := "/sys/class/power_supply/twl6030_battery/capacity"
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 19db8e59b86a825ffd157b213f86663510e2c6dc
 =======
 
 >>>>>>> 19db8e59b86a825ffd157b213f86663510e2c6dc

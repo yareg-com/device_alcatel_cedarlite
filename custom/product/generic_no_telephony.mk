@@ -21,6 +21,7 @@ PRODUCT_POLICY := android.policy_phone
 
 PRODUCT_PACKAGES := \
     DeskClock \
+<<<<<<< HEAD
     Bluetooth \
     Calculator \
 #    Calendar \
@@ -57,12 +58,40 @@ PRODUCT_PACKAGES += \
     pppd \
     sdptool \
     wpa_supplicant
+=======
+    AlarmProvider \
+    Bluetooth \
+    Calculator \
+    Calendar \
+    CertInstaller \
+    Email \
+    Exchange \
+    Gallery2 \
+    LatinIME \
+    Launcher2 \
+    Music \
+    Provision \
+    Phone \
+    Settings \
+    Sync \
+    SystemUI \
+    Updater \
+    CalendarProvider \
+    SyncProvider \
+    bluetooth-health \
+    hostapd \
+    wpa_supplicant.conf
+
+PRODUCT_PACKAGES += \
+    icu.dat
+>>>>>>> 19db8e59b86a825ffd157b213f86663510e2c6dc
 
 PRODUCT_PACKAGES += \
     librs_jni
 
 PRODUCT_PACKAGES += \
     audio.primary.default \
+<<<<<<< HEAD
     audio_policy.default \
     local_time.default \
     power.default
@@ -88,3 +117,93 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core.mk)
 PRODUCT_BRAND := generic
 PRODUCT_DEVICE := generic
 PRODUCT_NAME := generic_no_telephony
+=======
+    audio_policy.default
+
+PRODUCT_COPY_FILES := \
+        system/bluetooth/data/audio.conf:system/etc/bluetooth/audio.conf \
+        system/bluetooth/data/auto_pairing.conf:system/etc/bluetooth/auto_pairing.conf \
+        system/bluetooth/data/blacklist.conf:system/etc/bluetooth/blacklist.conf \
+        system/bluetooth/data/input.conf:system/etc/bluetooth/input.conf \
+        system/bluetooth/data/network.conf:system/etc/bluetooth/network.conf \
+        frameworks/base/media/libeffects/data/audio_effects.conf:system/etc/audio_effects.conf
+
+$(call inherit-product-if-exists, frameworks/base/data/fonts/fonts.mk)
+$(call inherit-product-if-exists, external/lohit-fonts/fonts.mk)
+$(call inherit-product-if-exists, frameworks/base/data/keyboards/keyboards.mk)
+
+PRODUCT_PACKAGES += \
+    ApplicationsProvider \
+    BackupRestoreConfirmation \
+    Contacts \
+    ContactsProvider \
+    DefaultContainerService \
+    DownloadProvider \
+    DownloadProviderUi \
+    HTMLViewer \
+    Home \
+    KeyChain \
+    MediaProvider \
+    PackageInstaller \
+    SettingsProvider \
+    SharedStorageBackup \
+    TelephonyProvider \
+    UserDictionaryProvider \
+    VpnDialogs \
+    apache-xml \
+    bouncycastle \
+    bu \
+    cacerts \
+    com.android.location.provider \
+    com.android.location.provider.xml \
+    core \
+    core-junit \
+    dalvikvm \
+    dexdeps \
+    dexdump \
+    dexlist \
+    dexopt \
+    dmtracedump \
+    dx \
+    ext \
+    filterfw \
+    framework-res \
+    hprof-conv \
+    icu.dat \
+    installd \
+    ip \
+    ip-up-vpn \
+    ip6tables \
+    iptables \
+    libOpenMAXAL \
+    libOpenSLES \
+    libaudiopreprocessing \
+    libcrypto \
+    libdvm \
+    libexpat \
+    libfilterfw \
+    libfilterpack_imageproc \
+    libgabi++ \
+    libicui18n \
+    libicuuc \
+    libnativehelper \
+    libnfc_ndef \
+    libpowermanager \
+    libspeexresampler \
+    libsqlite_jni \
+    libssl \
+    libstagefright_soft_h264dec \
+    libstagefright_soft_aacdec \
+    libstagefright_soft_amrdec \
+    libstagefright_soft_g711dec \
+    libstagefright_soft_mp3dec \
+    libstagefright_soft_mpeg4dec \
+    libstagefright_soft_vorbisdec \
+    libstagefright_soft_vpxdec \
+    libvariablespeed \
+    libwebrtc_audio_preprocessing \
+    libwilhelm \
+    libz \
+    screencap \
+    sensorservice
+>>>>>>> 19db8e59b86a825ffd157b213f86663510e2c6dc
