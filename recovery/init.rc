@@ -51,25 +51,14 @@ on init
     mount tmpfs tmpfs /mnt/fuse mode=0775,gid=1000
 
     write /sys/class/android_usb/android0/enable 0
-<<<<<<< HEAD
     write /sys/class/android_usb/android0/idVendor 1bbb
     write /sys/class/android_usb/android0/idProduct 0000 
     write /sys/class/android_usb/android0/iManufacturer Alcatel
     write /sys/class/android_usb/android0/iProduct OT-986
-=======
-    write /sys/class/android_usb/android0/idVendor 12D1
-    write /sys/class/android_usb/android0/idProduct 1037 
-    write /sys/class/android_usb/android0/iManufacturer huawei
-    write /sys/class/android_usb/android0/iProduct U9500
->>>>>>> 19db8e59b86a825ffd157b213f86663510e2c6dc
     write /sys/class/android_usb/android0/iSerial cleanup 
     write /sys/class/android_usb/android0/functions mass_storage,adb
     write /sys/class/android_usb/android0/enable 1
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 19db8e59b86a825ffd157b213f86663510e2c6dc
 on boot
 
     ifup lo
