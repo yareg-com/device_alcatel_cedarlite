@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 on init
     write /sys/class/android_usb/android0/iSerial $ro.serialno
     write /sys/class/android_usb/android0/f_rndis/manufacturer Alcatel
@@ -91,90 +90,10 @@ on property:sys.usb.config=ptp,adb
     write /sys/class/android_usb/android0/idVendor 1bbb
     write /sys/class/android_usb/android0/idProduct 1054
     write /sys/class/android_usb/android0/iSerial $ro.serialno
-=======
-on boot
-    write /sys/class/android_usb/android0/iManufacturer $ro.product.manufacturer
-    write /sys/class/android_usb/android0/iProduct $ro.product.model
-    write /sys/class/android_usb/android0/iSerial $ro.serialno
-    write /sys/class/android_usb/android0/idVendor 0451
-    write /sys/class/android_usb/android0/idProduct D101
-    write /sys/class/android_usb/f_mass_storage/inquiry_string "Texas Instruments  Blaze     0100"
-
-on property:sys.usb.config=none
-    stop adbd
-    write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/bDeviceClass 0
-    setprop sys.usb.state $sys.usb.config
-    write /sys/class/android_usb/android0/f_mass_storage/lun/file 0
-
-on property:sys.usb.config=adb
-    write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor 0451
-    write /sys/class/android_usb/android0/idProduct D101
-    write /sys/class/android_usb/android0/functions $sys.usb.config
-    write /sys/class/android_usb/android0/enable 1
-    setprop sys.usb.state $sys.usb.config
-    write /sys/class/android_usb/android0/f_mass_storage/lun/file 0
-
-on property:sys.usb.config=mtp
-    write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor 0451
-    write /sys/class/android_usb/android0/idProduct D108
-    write /sys/class/android_usb/android0/functions $sys.usb.config
-    write /sys/class/android_usb/android0/enable 1
-    setprop sys.usb.state $sys.usb.config
-    write /sys/class/android_usb/android0/f_mass_storage/lun/file 0
-
-on property:sys.usb.config=mtp,adb
-    write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor 0451
-    write /sys/class/android_usb/android0/idProduct D109
     write /sys/class/android_usb/android0/functions $sys.usb.config
     write /sys/class/android_usb/android0/enable 1
     start adbd
     setprop sys.usb.state $sys.usb.config
-    write /sys/class/android_usb/android0/f_mass_storage/lun/file 0
-
-on property:sys.usb.config=rndis
-    write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor 0451
-    write /sys/class/android_usb/android0/idProduct D103
-    write /sys/class/android_usb/android0/functions $sys.usb.config
-    write /sys/class/android_usb/android0/bDeviceClass 224
-    write /sys/class/android_usb/android0/enable 1
-    setprop sys.usb.state $sys.usb.config
-    write /sys/class/android_usb/android0/f_mass_storage/lun/file 0
-
-on property:sys.usb.config=rndis,adb
-    write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor 0451
-    write /sys/class/android_usb/android0/idProduct D104
-    write /sys/class/android_usb/android0/functions $sys.usb.config
-    write /sys/class/android_usb/android0/bDeviceClass 224
-    write /sys/class/android_usb/android0/enable 1
-    start adbd
-    setprop sys.usb.state $sys.usb.config
-    write /sys/class/android_usb/android0/f_mass_storage/lun/file 0
-
-on property:sys.usb.config=ptp
-    write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor 0451
-    write /sys/class/android_usb/android0/idProduct D10D
-    write /sys/class/android_usb/android0/functions $sys.usb.config
-    write /sys/class/android_usb/android0/enable 1
-    setprop sys.usb.state $sys.usb.config
-    write /sys/class/android_usb/android0/f_mass_storage/lun/file 0
-
-on property:sys.usb.config=ptp,adb
-    write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor 0451
-    write /sys/class/android_usb/android0/idProduct D10E
->>>>>>> 19db8e59b86a825ffd157b213f86663510e2c6dc
-    write /sys/class/android_usb/android0/functions $sys.usb.config
-    write /sys/class/android_usb/android0/enable 1
-    start adbd
-    setprop sys.usb.state $sys.usb.config
-<<<<<<< HEAD
 
 on property:sys.usb.config=ptp,mass_storage
     write /sys/class/android_usb/android0/enable 0
@@ -217,28 +136,10 @@ on property:sys.usb.config=mass_storage,adb
     write /sys/class/android_usb/android0/iSerial $ro.serialno
     write /sys/class/android_usb/f_mass_storage/luns sdcard
     write /sys/class/android_usb/f_mass_storage/lun/file none
-=======
-    write /sys/class/android_usb/android0/f_mass_storage/lun/file 0
-
-on property:sys.usb.config=mass_storage
-    write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor 0451
-    write /sys/class/android_usb/android0/idProduct D100
-    write /sys/class/android_usb/android0/functions $sys.usb.config
-    write /sys/class/android_usb/android0/enable 1
-    setprop sys.usb.state $sys.usb.config
-    write /sys/class/android_usb/android0/f_mass_storage/lun/file /dev/block/platform/omap/omap_hsmmc.1/by-name/cdrom
-
-on property:sys.usb.config=mass_storage,adb
-    write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor 0451
-    write /sys/class/android_usb/android0/idProduct D102
->>>>>>> 19db8e59b86a825ffd157b213f86663510e2c6dc
     write /sys/class/android_usb/android0/functions $sys.usb.config
     write /sys/class/android_usb/android0/enable 1
     start adbd
     setprop sys.usb.state $sys.usb.config
-<<<<<<< HEAD
 
 on property:sys.usb.config=modem
     write /sys/class/android_usb/android0/enable 0
@@ -282,6 +183,3 @@ on property:sys.usb.config=hisuite,mtp,mass_storage,adb
     write /sys/class/android_usb/android0/enable 1
     start adbd
     setprop sys.usb.state $sys.usb.config
-=======
-    write /sys/class/android_usb/android0/f_mass_storage/lun/file /dev/block/platform/omap/omap_hsmmc.1/by-name/cdrom
->>>>>>> 19db8e59b86a825ffd157b213f86663510e2c6dc

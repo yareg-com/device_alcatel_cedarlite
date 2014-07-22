@@ -10,19 +10,11 @@
 /dev/rpmsg-omx1		0660	drmrpc		drmrpc
 /dev/rproc_user		0660	drmrpc		drmrpc
 /dev/tf_driver		0660	drmrpc		drmrpc
-<<<<<<< HEAD
 /dev/tf_ctrl      0660	drmrpc		drmrpc
 
 # FM RADIO
 /dev/radio0			0666	system		radio
 /dev/fm34       0666	system		radio
-=======
-/dev/tf_ctrl		0660	drmrpc		drmrpc
-
-# FM RADIO
-/dev/radio0			0666	system		radio
-/dev/fm34			0666	system		radio
->>>>>>> 19db8e59b86a825ffd157b213f86663510e2c6dc
 
 # COMPASS
 /dev/akm8975_aot	0660	system		system
@@ -34,8 +26,4 @@
 /dev/uinput			0660	system		bluetooth
 
 # FUSE
-<<<<<<< HEAD
 /dev/fuse				0660	system		system
-=======
-/dev/fuse			0660	system		system
->>>>>>> 19db8e59b86a825ffd157b213f86663510e2c6dc
