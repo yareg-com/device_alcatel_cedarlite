@@ -1,0 +1,29 @@
+# PVR
+/dev/pvrsrvkm		0666	system		system
+
+# DSSCOMP
+/dev/dsscomp		0666	system		system
+/dev/tiler			0666	system		system
+
+# SYSLINK
+/dev/rpmsg-omx0		0660	drmrpc		drmrpc
+/dev/rpmsg-omx1		0660	drmrpc		drmrpc
+/dev/rproc_user		0660	drmrpc		drmrpc
+/dev/tf_driver		0660	drmrpc		drmrpc
+/dev/tf_ctrl      0660	drmrpc		drmrpc
+
+# FM RADIO
+/dev/radio0			0666	system		radio
+/dev/fm34       0666	system		radio
+
+# COMPASS
+/dev/akm8975_aot	0660	system		system
+/dev/akm8975_dev	0660	system		system
+
+# BLUETOOTH
+/dev/rfkill			0660	bluetooth	net_bt_admin
+/dev/ttyO1 			0660	bluetooth	bluetooth
+/dev/uinput			0660	system		bluetooth
+
+# FUSE
+/dev/fuse				0660	system		system

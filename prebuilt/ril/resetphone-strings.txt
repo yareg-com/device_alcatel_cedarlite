@@ -1,0 +1,64 @@
+/system/bin/linker
+__dso_handle
+__INIT_ARRAY__
+__FINI_ARRAY__
+__aeabi_unwind_cpp_pr0
+strcmp
+__android_log_print
+__exidx_end
+__exidx_start
+__data_start
+_edata
+__bss_start
+__bss_start__
+_bss_end__
+__bss_end__
+__end__
+_end
+_stack
+property_set
+usleep
+__libc_init
+puts
+liblog.so
+libcutils.so
+libutils.so
+libc.so
+libstdc++.so
+libm.so
+:HxD
+eh6I(FyD
+h4I FyD
+2HxD
+1H1IxDyD$
+0I FyD
+.HxD
+-H-IxDyD
+,I(FyD
+h*I FyD
+(HxD
+'H'IxDyD
+%I FyD
+#HxD
+"H#IxDyD
+ yDzD
+JyDzD
+ctl.stop
+ctl.start
+USAGE: [restart or stop radio service]
+             E.X: resetphoneengine pppd start or stop
+             E.X: resetphoneengine radio start or stop
+resetRadio
+ RESTART MODULE & PHONE ENGINE START 
+pppd
+start
+start pppd service...
+stop
+stop pppd service...
+radio
+start radio service...
+stop radio service...
+ RESTART MODULE & PHONE ENGINE END 
+ RESTART MODULE & PHONE ENGINE ERROR 
+ril-daemon
+pppd_gprs
