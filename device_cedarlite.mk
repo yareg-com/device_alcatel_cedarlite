@@ -24,7 +24,7 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
 # OVERLAY ------------------------------------------------------------------------------------------
 
-DEVICE_PACKAGE_OVERLAYS := device/alcatel/cedarlite/overlay
+#DEVICE_PACKAGE_OVERLAYS := device/alcatel/cedarlite/overlay
 
 
 # XHDPI --------------------------------------------------------------------------------------------
