@@ -47,6 +47,7 @@ TARGET_NO_RADIOIMAGE := true
 
 TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 
+BOARD_SKIP_ANDROID_DOC_BUILD := true
 
 # KERNEL -------------------------------------------------------------------------------------------
 BOARD_KERNEL_CMDLINE   := console=ttyO2,115200n8 mem=1G vmalloc=768M omap_wdt.timer_margin=30 androidboot.console=ttyO2 no_console_suspend androidboot.serialno=${androidboot.serialno} androidboot.bootloader=${androidboot.bootloader} androidboot.hardware=${androidboot.hardware}
