@@ -127,7 +127,21 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/camera/R2_MVEN000_LD0_ND0_IR0_SH0_FL0_SVEN000_DCCID1043/cid1043_ov2655_ldc_cfg_dcc.bin:system/vendor/misc/camera/R2_MVEN000_LD0_ND0_IR0_SH0_FL0_SVEN000_DCCID1043/cid1043_ov2655_ldc_cfg_dcc.bin \
     $(LOCAL_PATH)/prebuilt/camera/R2_MVEN000_LD0_ND0_IR0_SH0_FL0_SVEN000_DCCID1043/cid1043_ov2655_vnf_cfg_dcc.bin:system/vendor/misc/camera/R2_MVEN000_LD0_ND0_IR0_SH0_FL0_SVEN000_DCCID1043/cid1043_ov2655_vnf_cfg_dcc.bin \
     $(LOCAL_PATH)/prebuilt/camera/ducati-m3.bin:system/vendor/firmware/ducati-m3.bin \
-    $(LOCAL_PATH)/prebuilt/camera/proprietary-version.txt:system/vendor/firmware/proprietary-version.txt
+    $(LOCAL_PATH)/prebuilt/camera/libOMX.ITTIAM.WMA.decode.so:system/lib/libOMX.ITTIAM.WMA.decode.so \
+    $(LOCAL_PATH)/prebuilt/camera/libOMX.ITTIAM.WMALSL.decode.so:system/lib/libOMX.ITTIAM.WMALSL.decode.so \
+    $(LOCAL_PATH)/prebuilt/camera/libOMX.ITTIAM.WMAPRO.decode.so:system/lib/libOMX.ITTIAM.WMAPRO.decode.so \
+    $(LOCAL_PATH)/prebuilt/camera/libOMX.TI.DUCATI1.MISC.SAMPLE.so:system/lib/libOMX.TI.DUCATI1.MISC.SAMPLE.so \
+    $(LOCAL_PATH)/prebuilt/camera/libOMX.TI.DUCATI1.VIDEO.CAMERA.so:system/lib/libOMX.TI.DUCATI1.VIDEO.CAMERA.so \
+    $(LOCAL_PATH)/prebuilt/camera/libOMX.TI.DUCATI1.VIDEO.DECODER.secure.so:system/lib/libOMX.TI.DUCATI1.VIDEO.DECODER.secure.so \
+    $(LOCAL_PATH)/prebuilt/camera/libOMX.TI.DUCATI1.VIDEO.DECODER.so:system/lib/libOMX.TI.DUCATI1.VIDEO.DECODER.so \
+    $(LOCAL_PATH)/prebuilt/camera/libOMX.TI.DUCATI1.VIDEO.H264E.so:system/lib/libOMX.TI.DUCATI1.VIDEO.H264E.so \
+    $(LOCAL_PATH)/prebuilt/camera/libOMX.TI.DUCATI1.VIDEO.MPEG4E.so:system/lib/libOMX.TI.DUCATI1.VIDEO.MPEG4E.so \
+    $(LOCAL_PATH)/prebuilt/camera/libOMX_Core.so:system/lib/libOMX_Core.so \
+    $(LOCAL_PATH)/prebuilt/camera/libdomx.so:system/lib/libdomx.so \
+    $(LOCAL_PATH)/prebuilt/camera/libion.so:system/lib/libion.so \
+    $(LOCAL_PATH)/prebuilt/camera/libmm_osal.so:system/lib/libmm_osal.so \
+    $(LOCAL_PATH)/prebuilt/camera/libtiutils.so:system/lib/libtiutils.so \
+    $(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml
 
 
 # GPS ----------------------------------------------------------------------------------------------
